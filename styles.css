@@ -15,6 +15,7 @@
   --black: #000000;
   --badge-bg: rgba(112, 23, 210, 0.41);
   --callout-bg: rgba(206, 203, 246, 0.57);
+  --social-circle-bg: rgba(255, 255, 255, 0.18);
 }
 
 html {
@@ -851,7 +852,7 @@ body.nav-open .menu-toggle span:nth-child(3) {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.18);
+  background: var(--social-circle-bg);
 }
 
 .social-link img {
@@ -861,6 +862,11 @@ body.nav-open .menu-toggle span:nth-child(3) {
 
 .social-linkedin {
   background: var(--purple);
+  color: var(--white);
+}
+
+.social-linkedin path {
+  fill: currentColor;
 }
 
 /* ===== Bottom Nav ===== */
