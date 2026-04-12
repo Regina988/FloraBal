@@ -325,6 +325,27 @@ body.nav-open .menu-toggle span:nth-child(3) {
   line-height: 1;
   text-align: center;
   font-weight: 400;
+  position: relative;
+  display: inline-block;
+  --glow-x: 50%;
+  --glow-y: 50%;
+}
+
+.hero-title::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  pointer-events: none;
+  background: radial-gradient(circle 180px at var(--glow-x) var(--glow-y), rgba(239, 220, 255, 0.95), rgba(239, 220, 255, 0) 65%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.hero-title:hover::after {
+  opacity: 1;
 }
 
 /* ===== What is FloraBal ===== */
