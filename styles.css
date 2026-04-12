@@ -80,7 +80,7 @@ img {
 
 /* ===== Header / Navbar ===== */
 .header {
-  position: static;
+  position: relative;
   width: 1248px;
   z-index: 100;
   margin: 24px auto 0;
@@ -901,6 +901,11 @@ body.nav-open .menu-toggle span:nth-child(3) {
 .lang-selector-dark .lang-menu {
   border-color: var(--white);
   background: var(--dark-purple);
+}
+
+.footer-section .lang-selector-dark .lang-menu {
+  top: auto;
+  bottom: calc(100% + 8px);
 }
 
 .lang-selector-dark .lang-option:hover,
