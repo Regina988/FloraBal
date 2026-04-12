@@ -145,15 +145,23 @@ img {
 }
 
 .lang-selector {
+  position: relative;
+  width: 202px;
+}
+
+.lang-selector-trigger {
   display: flex;
   align-items: center;
   gap: 8px;
+  width: 100%;
   border: 1px solid var(--black);
   border-radius: 50px;
   padding: 12px 20px;
   height: 56px;
-  width: 202px;
   cursor: pointer;
+  background: var(--white);
+  color: var(--black);
+  font: inherit;
 }
 
 .lang-flag {
@@ -167,11 +175,59 @@ img {
   font-size: 18px;
   flex: 1;
   text-align: center;
+  white-space: nowrap;
 }
 
 .lang-caret {
   width: 20px;
   height: 20px;
+  transition: transform 0.2s ease;
+}
+
+.lang-selector.is-open .lang-caret {
+  transform: rotate(180deg);
+}
+
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  border: 1px solid var(--black);
+  border-radius: 18px;
+  background: var(--white);
+  padding: 8px;
+  list-style: none;
+  display: none;
+  z-index: 30;
+}
+
+.lang-selector.is-open .lang-menu {
+  display: block;
+}
+
+.lang-option {
+  width: 100%;
+  border: none;
+  background: transparent;
+  border-radius: 12px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.lang-option:hover,
+.lang-option:focus-visible {
+  background: var(--lilac);
+  outline: none;
+}
+
+.lang-option-label {
+  font-size: 16px;
+  line-height: 1.2;
 }
 
 /* ===== Hero ===== */
@@ -632,11 +688,11 @@ img {
 /* White ellipse that overlaps the top — creates the crescent moon transition */
 .footer-white-ellipse {
   position: absolute;
-  top: -180px;
+  top: -160px;
   left: 50%;
   transform: translateX(-50%);
   width: 1813px;
-  height: 420px;
+  height: 340px;
   background: var(--white);
   border-radius: 0 0 50% 50%;
   z-index: 1;
@@ -657,7 +713,7 @@ img {
 .footer-bottom-content {
   position: relative;
   z-index: 2;
-  margin-top: 48px;
+  margin-top: 68px;
 }
 
 .footer-heading {
@@ -773,13 +829,72 @@ img {
 }
 
 .lang-selector-dark {
+  color: var(--white);
+}
+
+.lang-selector-dark .lang-text,
+.lang-selector-dark .lang-option-label {
+  color: var(--white);
+}
+
+.lang-selector-dark .lang-selector-trigger {
   border-color: var(--white);
   color: var(--white);
   background: var(--dark-purple);
 }
 
-.lang-selector-dark .lang-text {
-  color: var(--white);
+.lang-selector-dark .lang-menu {
+  border-color: var(--white);
+  background: var(--dark-purple);
+}
+
+.lang-selector-dark .lang-option:hover,
+.lang-selector-dark .lang-option:focus-visible {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+html[lang="es"] .navbar {
+  gap: 64px;
+}
+
+html[lang="es"] .nav-links,
+html[lang="es"] .bottom-nav-links {
+  gap: 34px;
+}
+
+html[lang="es"] .nav-links a,
+html[lang="es"] .bottom-nav-links a {
+  font-size: 17px;
+  line-height: 1.25;
+}
+
+html[lang="es"] .section-heading {
+  letter-spacing: -1px;
+  line-height: 1.15;
+}
+
+html[lang="es"] .problem-card {
+  height: auto;
+  min-height: 220px;
+}
+
+html[lang="es"] .problem-card h4,
+html[lang="es"] .why-card h3 {
+  line-height: 1.25;
+}
+
+html[lang="es"] .problem-card p,
+html[lang="es"] .why-card p,
+html[lang="es"] .testimonial-text,
+html[lang="es"] .what-is-text,
+html[lang="es"] .problem-intro,
+html[lang="es"] .solution-text {
+  line-height: 1.45;
+}
+
+html[lang="es"] .btn,
+html[lang="es"] .btn-contact {
+  padding-inline: 30px;
 }
 
 /* ===== Responsive ===== */
@@ -815,6 +930,15 @@ img {
   .navbar {
     gap: 40px;
     padding: 20px 30px;
+  }
+
+  html[lang="es"] .navbar {
+    gap: 26px;
+  }
+
+  html[lang="es"] .nav-links,
+  html[lang="es"] .bottom-nav-links {
+    gap: 18px;
   }
 
   .why-cards {
@@ -966,5 +1090,10 @@ img {
 
   .bottom-nav-links {
     gap: 20px;
+  }
+
+  html[lang="es"] .nav-links a,
+  html[lang="es"] .bottom-nav-links a {
+    font-size: 13px;
   }
 }
