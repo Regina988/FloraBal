@@ -1216,7 +1216,7 @@ html[lang="es"] .btn-contact {
   .hero-title {
     font-size: clamp(64px, 24vw, 120px);
     letter-spacing: -0.04em;
-    line-height: 0.9;
+    line-height: 1;
     white-space: nowrap;
     width: 100%;
     max-width: 100%;
@@ -1228,6 +1228,7 @@ html[lang="es"] .btn-contact {
     transform: none;
     width: 100%;
     padding: 0 8px 10px;
+    overflow: hidden;
   }
 
   .hero-image-wrapper {
