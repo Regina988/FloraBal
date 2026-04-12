@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FloraBal - Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #34026f;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .wip-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 60px;
+    }
+    .wip-logo svg { width: 50px; height: 50px; }
+    .wip-logo span {
+      font-family: 'Inter', sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .wip-logo span b { color: #E9CDFD; }
+    h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(40px, 8vw, 90px);
+      letter-spacing: -1.8px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+    h1 span { color: #E9CDFD; }
+    p {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 30px;
+      opacity: 0.8;
+      max-width: 500px;
+      margin-bottom: 40px;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 40px;
+      border-radius: 50px;
+      background: #F7F1FF;
+      color: #000;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .back-btn:hover { opacity: 0.85; }
+    .badge {
+      display: inline-block;
+      background: rgba(112, 23, 210, 0.41);
+      border-radius: 12px;
+      padding: 12px 30px;
+      margin-bottom: 40px;
+    }
+    .badge span {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wip-logo">
+    <!-- LOGO: Same SVG flower icon used on the main page -->
+    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="30" cy="22" rx="8" ry="14" fill="#7017D2"/>
+      <ellipse cx="21" cy="30" rx="8" ry="14" fill="#9B4DCA" transform="rotate(-30 21 30)"/>
+      <ellipse cx="39" cy="30" rx="8" ry="14" fill="#9B4DCA" transform="rotate(30 39 30)"/>
+      <ellipse cx="30" cy="40" rx="4" ry="10" fill="#E9CDFD"/>
+    </svg>
+    <span>flora<b>Bal</b></span>
+  </div>
+
+  <div class="badge"><span>Work in Progress</span></div>
+
+  <h1>COMING <span>SOON</span></h1>
+  <p>This page is currently under construction. We're working hard to bring you something amazing.</p>
+
+  <a href="index.html" class="back-btn">Back to Home</a>
+</body>
+</html>

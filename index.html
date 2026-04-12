@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FloraBal - FemTech Vaginal Health Diagnostics</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- =====================================================
+       HOW TO REPLACE IMAGES:
+       1. Put your image files in the "assets/" folder
+       2. Find the <img> tag you want to change
+       3. Replace the src="..." value with "assets/your-file-name.jpg"
+
+       Example:
+         BEFORE: src="https://www.figma.com/api/mcp/asset/..."
+         AFTER:  src="assets/hero-photo.jpg"
+
+       All replaceable images are marked with "IMAGE:" comments below.
+       ====================================================== -->
+
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <nav class="navbar">
+      <!--
+        LOGO: To replace with your own logo image:
+        1. Save your logo as "assets/logo.png" (recommended ~174x44px, transparent PNG)
+        2. Replace the <img> src below with "assets/logo.png"
+        3. Remove the "logo-img-crop" class and add "logo-img-custom" instead
+      -->
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-crop">
+          <!-- IMAGE: Header logo — replace src with "assets/logo.png" and remove the crop wrapper -->
+          <img src="https://www.figma.com/api/mcp/asset/7f78518b-f1ac-4896-90ff-1c907b80309f" alt="FloraBal Logo" class="logo-img-crop">
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="wip.html">Who we are</a></li>
+        <li><a href="wip.html">How it works</a></li>
+        <li><a href="wip.html">KitFloraBal</a></li>
+        <li><a href="wip.html">Blog</a></li>
+      </ul>
+      <div class="lang-selector">
+        <!-- IMAGE: Language flag icon — replace src with "assets/flag-spain.png" or similar -->
+        <img src="https://www.figma.com/api/mcp/asset/acf0e3cd-0096-4d41-8023-b9bbe0112249" alt="Flag" class="lang-flag">
+        <span class="lang-text">English</span>
+        <svg class="lang-caret" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero">
+    <div class="hero-image-wrapper">
+      <!-- IMAGE: Hero background photo — replace src with "assets/hero.jpg" (recommended ~1400x900px) -->
+      <img src="https://www.figma.com/api/mcp/asset/e7e63121-757c-4fe5-afcf-4523e0bb8a30" alt="FloraBal team" class="hero-image">
+      <div class="hero-overlay"></div>
+      <div class="hero-title-wrapper">
+        <h1 class="hero-title">FLORABAL</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== What is FloraBal ===== -->
+  <section id="who-we-are" class="what-is">
+    <div class="what-is-inner">
+      <div class="what-is-image">
+        <!-- IMAGE: "What is FloraBal" section photo — replace src with "assets/what-is.jpg" (recommended ~510x451px) -->
+        <img src="https://www.figma.com/api/mcp/asset/83e2bc33-e676-4ab6-903c-2debac9c8cf4" alt="Woman with FloraBal">
+      </div>
+      <div class="what-is-content">
+        <h2 class="section-heading">
+          <span class="text-white">WHAT IS</span>
+          <span class="text-lilac"> FLORABAL</span><span class="text-white">?</span>
+        </h2>
+        <p class="what-is-text">
+          FloraBal is a rapid vaginal health diagnostic kit designed to detect infections quickly, easily, and without the need for a laboratory or clinical visit. It belongs to a new generation of FemTech solutions with the objective of making women's healthcare more accesible, private and user-friendly.
+        </p>
+        <p class="what-is-text">
+          Using advanced biomarker detection technology, FloraBal delivers reliable results in minutes, helping users make informed decisions about their health.
+        </p>
+        <div class="what-is-buttons">
+          <a href="wip.html" class="btn btn-light">How it works</a>
+          <a href="wip.html" class="btn btn-light">Who we are</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== The Problem ===== -->
+  <section class="problem">
+    <div class="problem-inner">
+      <h2 class="section-heading problem-heading">
+        <span>THE </span><span class="text-purple">PROBLEM</span>
+      </h2>
+      <div class="problem-content">
+        <div class="problem-left">
+          <!-- IMAGE: Mexico map illustration — replace src with "assets/mexico-map.png" (recommended ~520x326px, transparent PNG) -->
+          <img src="https://www.figma.com/api/mcp/asset/177a21dd-252e-421a-aa56-15794533fb72" alt="Mexico map" class="mexico-map">
+        </div>
+        <div class="problem-right">
+          <div class="problem-description">
+            <div class="problem-border"></div>
+            <div class="problem-text-area">
+              <p class="problem-intro">Vaginal infections affect millions of women in Mexico each year, yet the default response is self-medication, not diagnosis.</p>
+              <div class="problem-cards">
+                <div class="problem-card">
+                  <div class="problem-card-icon icon-clock">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                      <path d="M14 4.667C8.845 4.667 4.667 8.845 4.667 14S8.845 23.333 14 23.333 23.333 19.155 23.333 14 19.155 4.667 14 4.667zm0 16.333A7 7 0 1114 7a7 7 0 010 14zm.583-11.083h-1.75v4.666l4.084 2.45.875-1.433-3.209-1.9V9.917z" fill="#34026f"/>
+                    </svg>
+                  </div>
+                  <h4>Delayed care</h4>
+                  <p>Women wait too long or never seek a proper diagnosis.</p>
+                </div>
+                <div class="problem-card">
+                  <div class="problem-card-icon icon-pill">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                      <rect x="4" y="4" width="20" height="20" rx="4" fill="#E9CDFD"/>
+                      <path d="M9 14h10M14 9v10" stroke="#34026f" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <h4>Self-medication</h4>
+                  <p>Symptoms treated without identifying the actual cause.</p>
+                </div>
+                <div class="problem-card">
+                  <div class="problem-card-icon icon-alert">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                      <path d="M14 4.667C8.845 4.667 4.667 8.845 4.667 14S8.845 23.333 14 23.333 23.333 19.155 23.333 14 19.155 4.667 14 4.667zm0 16.333A7 7 0 1114 7a7 7 0 010 14zm-.583-3.5h1.166v1.167h-1.166V17.5zm0-7h1.166v5.833h-1.166V10.5z" fill="#34026f"/>
+                    </svg>
+                  </div>
+                  <h4>Wrong treatment</h4>
+                  <p>Misdiagnosis lead to recurring infections and complications.</p>
+                </div>
+              </div>
+              <div class="problem-callout">
+                <p>This cycle drives up complications, including elevated STI risk and pregnancy issues while adding costs that could be avoided with a timely, accurate diagnosis.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Our Solution ===== -->
+  <section id="how-it-works" class="solution">
+    <div class="solution-inner">
+      <div class="solution-left">
+        <h2 class="section-heading">
+          <span class="text-white">OUR </span><span class="text-lilac">SOLUTION</span>
+        </h2>
+        <div class="solution-badges">
+          <div class="badge">
+            <span class="badge-value">15 min</span>
+            <span class="badge-label">RESULTS</span>
+          </div>
+          <div class="badge">
+            <span class="badge-value">No lab</span>
+            <span class="badge-label">NEEDED</span>
+          </div>
+          <div class="badge">
+            <span class="badge-value">Self-use</span>
+            <span class="badge-label">AT HOME</span>
+          </div>
+        </div>
+        <p class="solution-text">
+          FloraBal uses a <strong>lateral flow immunoassay,</strong> the same technology behind pregnancy tests, to detect biomarkers like sialidase, an enzyme linked to bacterial vaginosis.
+        </p>
+        <p class="solution-text">
+          Designed for self-sampling, it delivers accurate results in ~15 minutes with no laboratory processing required. Biochemical precision, built for everyday use.
+        </p>
+        <a href="wip.html" class="btn btn-light">Learn more</a>
+      </div>
+      <div class="solution-right">
+        <!-- IMAGE: Solution section photo — replace src with "assets/solution.jpg" (recommended ~510x451px) -->
+        <img src="https://www.figma.com/api/mcp/asset/83e2bc33-e676-4ab6-903c-2debac9c8cf4" alt="FloraBal product" class="solution-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Why FloraBal ===== -->
+  <section class="why-florabal">
+    <div class="why-inner">
+      <h2 class="section-heading why-heading">
+        <span>WHY </span><span class="text-purple">FLORABAL</span><span>?</span>
+      </h2>
+      <p class="why-subtitle">A solution built from ground up for the women who need it most. Fast, accurate, and designed for real life</p>
+      <div class="why-cards">
+        <div class="why-card">
+          <div class="why-card-icon">
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+              <path d="M26 15c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 10c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm-14 6c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm28 0c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm-7.4 2.4C30.8 35.6 28.5 37 26 37s-4.8-1.4-6.6-3.6c-1.4.8-2.4 2-2.4 3.6v2h18v-2c0-1.6-1-2.8-2.4-3.6z" fill="#34026f"/>
+            </svg>
+          </div>
+          <h3>100% women-led team</h3>
+          <p>Built by women in biotech and health innovation with firsthand understanding of the problem we're solving</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-icon">
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+              <path d="M26 6C14.96 6 6 14.96 6 26s8.96 20 20 20 20-8.96 20-20S37.04 6 26 6zm0 36c-8.84 0-16-7.16-16-16S17.16 10 26 10s16 7.16 16 16-7.16 16-16 16zm-2-26h4v12h-4V16zm0 16h4v4h-4v-4z" fill="#34026f"/>
+            </svg>
+          </div>
+          <h3>Fast, affordable & accesible</h3>
+          <p>Results in 15 minutes at a fraction of the cost. No clinic visit, no lab, no waiting days for answers.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-icon">
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+              <path d="M26 6C14.96 6 6 14.96 6 26s8.96 20 20 20 20-8.96 20-20S37.04 6 26 6zm0 36c-8.84 0-16-7.16-16-16S17.16 10 26 10s16 7.16 16 16-7.16 16-16 16zm-8-16h6v-6h4v6h6v4h-6v6h-4v-6h-6v-4z" fill="#34026f"/>
+            </svg>
+          </div>
+          <h3>Designed for real-world impact</h3>
+          <p>Targeted at underserved and high-need communities where access to traditional diagnostics is limited</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Testimonies & Partners ===== -->
+  <section class="testimonies">
+    <div class="testimonies-inner">
+      <h2 class="section-heading testimonies-heading">
+        <span>TESTIMONIES & </span><span class="text-purple">PARTNERS</span>
+      </h2>
+      <div class="testimonial-cards">
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <!-- IMAGE: Testimonial avatar 1 — replace src with "assets/avatar-1.jpg" (recommended 70x70px, square) -->
+            <img src="https://www.figma.com/api/mcp/asset/9bbbc492-7c27-498e-abf9-5b3d4dbd0f7d" alt="Avatar" class="testimonial-avatar">
+            <div class="testimonial-info">
+              <h4>Lorem ipsum</h4>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+          </div>
+          <div class="testimonial-quote-icon">
+            <!-- IMAGE: Quote icon — replace src with "assets/quote-icon.png" if desired -->
+            <img src="https://www.figma.com/api/mcp/asset/a709aac0-23e5-418b-82ff-71d4adf0f937" alt="Quote">
+          </div>
+          <p class="testimonial-text">"Lorem ipsum dolor sit amet consectetur adipiscing, elit morbi imperdiet, Lorem ipsum dolor sit amet consectetur adipiscing, elit morbi imperdiet"</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <!-- IMAGE: Testimonial avatar 2 — replace src with "assets/avatar-2.jpg" (recommended 70x70px, square) -->
+            <img src="https://www.figma.com/api/mcp/asset/9bbbc492-7c27-498e-abf9-5b3d4dbd0f7d" alt="Avatar" class="testimonial-avatar">
+            <div class="testimonial-info">
+              <h4>Lorem ipsum</h4>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+          </div>
+          <div class="testimonial-quote-icon">
+            <img src="https://www.figma.com/api/mcp/asset/a709aac0-23e5-418b-82ff-71d4adf0f937" alt="Quote">
+          </div>
+          <p class="testimonial-text">"Lorem ipsum dolor sit amet consectetur adipiscing, elit morbi imperdiet, Lorem ipsum dolor sit amet consectetur adipiscing, elit morbi imperdiet"</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <!-- IMAGE: Testimonial avatar 3 — replace src with "assets/avatar-3.jpg" (recommended 70x70px, square) -->
+            <img src="https://www.figma.com/api/mcp/asset/9bbbc492-7c27-498e-abf9-5b3d4dbd0f7d" alt="Avatar" class="testimonial-avatar">
+            <div class="testimonial-info">
+              <h4>Lorem ipsum</h4>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+          </div>
+          <div class="testimonial-quote-icon">
+            <img src="https://www.figma.com/api/mcp/asset/a709aac0-23e5-418b-82ff-71d4adf0f937" alt="Quote">
+          </div>
+          <p class="testimonial-text">"Lorem ipsum dolor sit amet consectetur adipiscing, elit morbi imperdiet, Lorem ipsum dolor sit amet consectetur adipiscing, elit morbi imperdiet"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer / Contact Section ===== -->
+  <!--
+    Footer layout: Dark purple flat background covers the full area.
+    A large white ellipse sits on top half, creating a crescent-moon transition.
+    Text + button sit on the white ellipse area, social icons on the purple area.
+  -->
+  <footer class="footer-section">
+    <!-- White ellipse crescent overlapping the top -->
+    <div class="footer-white-ellipse"></div>
+    <!-- Content on top of everything -->
+    <div class="footer-content">
+      <h2 class="footer-heading">Interested? Contact Us!</h2>
+      <p class="footer-subtext">Florabal. FemTech. Intimate Health.</p>
+      <a href="wip.html" class="btn-contact">Contact Us</a>
+      <div class="social-icons">
+        <!-- IMAGE: Social icon — Facebook. Replace src with "assets/facebook.png" -->
+        <a href="wip.html" class="social-link">
+          <img src="https://www.figma.com/api/mcp/asset/e11e60f7-cea5-4b89-84c3-7c060d183990" alt="Facebook">
+        </a>
+        <!-- IMAGE: Social icon — Instagram. Replace src with "assets/instagram.png" -->
+        <a href="wip.html" class="social-link">
+          <img src="https://www.figma.com/api/mcp/asset/6de7e89c-67b3-40a7-8d57-e73ece543006" alt="Instagram">
+        </a>
+        <!-- IMAGE: Social icon — LinkedIn. Replace src with "assets/linkedin.png" -->
+        <a href="wip.html" class="social-link">
+          <img src="https://www.figma.com/api/mcp/asset/11c2c113-23bc-41a9-9450-c91d47e18d5f" alt="LinkedIn">
+        </a>
+      </div>
+    </div>
+
+    <!-- ===== Bottom Nav (inside footer so it sits on the purple bg) ===== -->
+    <nav class="bottom-nav">
+      <div class="bottom-nav-inner">
+        <!-- IMAGE: Bottom nav logo (flower icon only) — replace src with "assets/logo-icon.png" -->
+        <a href="index.html" class="bottom-nav-logo">
+          <div class="bottom-nav-logo-crop">
+            <img src="https://www.figma.com/api/mcp/asset/dd02a08c-ef44-49fe-b847-50de80b6694a" alt="FloraBal" class="bottom-logo-img-crop">
+          </div>
+        </a>
+        <ul class="bottom-nav-links">
+          <li><a href="wip.html">Who we are</a></li>
+          <li><a href="wip.html">How it works</a></li>
+          <li><a href="wip.html">KitFloraBal</a></li>
+          <li><a href="wip.html">Blog</a></li>
+        </ul>
+        <div class="lang-selector lang-selector-dark">
+          <!-- IMAGE: Language flag icon (bottom nav) — same as header flag -->
+          <img src="https://www.figma.com/api/mcp/asset/acf0e3cd-0096-4d41-8023-b9bbe0112249" alt="Flag" class="lang-flag">
+          <span class="lang-text">English</span>
+          <svg class="lang-caret" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M5 8L10 13L15 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </nav>
+  </footer>
+</body>
+</html>
