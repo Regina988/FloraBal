@@ -865,7 +865,7 @@ body.nav-open .menu-toggle span:nth-child(3) {
   color: var(--white);
 }
 
-.social-linkedin path {
+.social-linkedin svg {
   fill: currentColor;
 }
 
