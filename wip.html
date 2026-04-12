@@ -10,6 +10,7 @@
     body {
       font-family: 'Inter', sans-serif;
       min-height: 100vh;
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -25,7 +26,7 @@
       gap: 12px;
       margin-bottom: 60px;
     }
-    .wip-logo svg { width: 50px; height: 50px; }
+    .wip-logo img { width: 50px; height: 50px; object-fit: contain; }
     .wip-logo span {
       font-family: 'Inter', sans-serif;
       font-size: 28px;
@@ -33,6 +34,59 @@
       color: #fff;
     }
     .wip-logo span b { color: #E9CDFD; }
+    .lang-selector {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 202px;
+      z-index: 5;
+    }
+    .lang-selector-trigger {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      border: 1px solid #fff;
+      border-radius: 50px;
+      padding: 12px 20px;
+      height: 56px;
+      cursor: pointer;
+      background: #34026f;
+      color: #fff;
+      font: inherit;
+    }
+    .lang-flag { width: 36px; height: 24px; border-radius: 5px; object-fit: cover; }
+    .lang-text { font-size: 18px; flex: 1; text-align: center; white-space: nowrap; }
+    .lang-caret { width: 20px; height: 20px; transition: transform 0.2s ease; }
+    .lang-selector.is-open .lang-caret { transform: rotate(180deg); }
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      border: 1px solid #fff;
+      border-radius: 18px;
+      background: #34026f;
+      padding: 8px;
+      list-style: none;
+      display: none;
+    }
+    .lang-selector.is-open .lang-menu { display: block; }
+    .lang-option {
+      width: 100%;
+      border: none;
+      background: transparent;
+      border-radius: 12px;
+      padding: 8px 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      color: #fff;
+      font: inherit;
+    }
+    .lang-option:hover, .lang-option:focus-visible { background: rgba(255, 255, 255, 0.16); outline: none; }
+    .lang-option-label { font-size: 16px; line-height: 1.2; }
     h1 {
       font-family: 'Anton', sans-serif;
       font-size: clamp(40px, 8vw, 90px);
@@ -76,25 +130,150 @@
       font-weight: 700;
       font-size: 18px;
     }
+    html[lang="es"] h1 { letter-spacing: -1px; line-height: 1.08; }
+    html[lang="es"] p { line-height: 1.45; }
+    @media (max-width: 768px) {
+      .lang-selector { top: 16px; right: 16px; width: 190px; }
+      .lang-selector-trigger { padding: 10px 14px; height: 52px; }
+      .lang-text { font-size: 16px; }
+    }
   </style>
 </head>
 <body>
+  <div class="lang-selector" data-lang-selector>
+    <button class="lang-selector-trigger" type="button" data-lang-trigger aria-haspopup="listbox" aria-expanded="false" aria-label="Change language">
+      <img src="" alt="UK flag" class="lang-flag" data-lang-current-flag>
+      <span class="lang-text" data-i18n="lang.current">English</span>
+      <svg class="lang-caret" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <ul class="lang-menu" role="listbox" aria-label="Language options">
+      <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="en"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="UK flag" class="lang-flag" data-lang-option-flag data-lang-flag="en"><span class="lang-option-label">English</span></button></li>
+      <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="es"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Bandera de España" class="lang-flag" data-lang-option-flag data-lang-flag="es"><span class="lang-option-label">Español</span></button></li>
+    </ul>
+  </div>
+
   <div class="wip-logo">
-    <!-- LOGO: Same SVG flower icon used on the main page -->
-    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="30" cy="22" rx="8" ry="14" fill="#7017D2"/>
-      <ellipse cx="21" cy="30" rx="8" ry="14" fill="#9B4DCA" transform="rotate(-30 21 30)"/>
-      <ellipse cx="39" cy="30" rx="8" ry="14" fill="#9B4DCA" transform="rotate(30 39 30)"/>
-      <ellipse cx="30" cy="40" rx="4" ry="10" fill="#E9CDFD"/>
-    </svg>
+    <img src="assets/logo-icon.png" alt="FloraBal Logo">
     <span>flora<b>Bal</b></span>
   </div>
 
-  <div class="badge"><span>Work in Progress</span></div>
+  <div class="badge"><span data-i18n="wip.badge">Work in Progress</span></div>
 
-  <h1>COMING <span>SOON</span></h1>
-  <p>This page is currently under construction. We're working hard to bring you something amazing.</p>
+  <h1><span data-i18n="wip.coming">COMING</span> <span data-i18n="wip.soon">SOON</span></h1>
+  <p data-i18n="wip.description">This page is currently under construction. We're working hard to bring you something amazing.</p>
 
-  <a href="index.html" class="back-btn">Back to Home</a>
+  <a href="index.html" class="back-btn" data-i18n="wip.backHome">Back to Home</a>
+  <script>
+    const translations = {
+      en: {
+        'lang.current': 'English',
+        'wip.badge': 'Work in Progress',
+        'wip.coming': 'COMING',
+        'wip.soon': 'SOON',
+        'wip.description': "This page is currently under construction. We're working hard to bring you something amazing.",
+        'wip.backHome': 'Back to Home'
+      },
+      es: {
+        'lang.current': 'Español',
+        'wip.badge': 'Trabajo en Progreso',
+        'wip.coming': 'PRÓXIMAMENTE',
+        'wip.soon': '',
+        'wip.description': 'Esta página está en construcción. Estamos trabajando para traerte algo increíble muy pronto.',
+        'wip.backHome': 'Volver al inicio'
+      }
+    };
+
+    const flagByLanguage = {
+      en: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 24'><rect width='36' height='24' fill='#012169'/><path d='M0 0l36 24M36 0L0 24' stroke='#fff' stroke-width='5'/><path d='M0 0l36 24M36 0L0 24' stroke='#C8102E' stroke-width='2.5'/><path d='M18 0v24M0 12h36' stroke='#fff' stroke-width='8'/><path d='M18 0v24M0 12h36' stroke='#C8102E' stroke-width='4'/></svg>",
+      es: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 24'><rect width='36' height='24' fill='#c60b1e'/><rect y='6' width='36' height='12' fill='#ffc400'/></svg>"
+    };
+
+    const selectorElements = document.querySelectorAll('[data-lang-selector]');
+    const optionFlagElements = document.querySelectorAll('[data-lang-option-flag]');
+    const storageKey = 'florabal-language';
+
+    function applyLanguage(language) {
+      const selectedLanguage = translations[language] ? language : 'en';
+      const languageMap = translations[selectedLanguage];
+
+      document.documentElement.lang = selectedLanguage;
+      document.title = selectedLanguage === 'es' ? 'FloraBal - Próximamente' : 'FloraBal - Coming Soon';
+
+      document.querySelectorAll('[data-i18n]').forEach((element) => {
+        const key = element.getAttribute('data-i18n');
+        if (languageMap[key] !== undefined) {
+          element.textContent = languageMap[key];
+        }
+      });
+
+      selectorElements.forEach((selector) => {
+        const flag = selector.querySelector('[data-lang-current-flag]');
+        if (flag) {
+          flag.src = `data:image/svg+xml,${encodeURIComponent(flagByLanguage[selectedLanguage])}`;
+          flag.alt = selectedLanguage === 'es' ? 'Bandera de España' : 'UK flag';
+        }
+      });
+
+      localStorage.setItem(storageKey, selectedLanguage);
+    }
+
+    function hydrateLanguageOptionFlags() {
+      optionFlagElements.forEach((flag) => {
+        const optionLanguage = flag.getAttribute('data-lang-flag');
+        if (optionLanguage && flagByLanguage[optionLanguage]) {
+          flag.src = `data:image/svg+xml,${encodeURIComponent(flagByLanguage[optionLanguage])}`;
+        }
+      });
+    }
+
+    function closeAllMenus() {
+      selectorElements.forEach((selector) => {
+        selector.classList.remove('is-open');
+        const trigger = selector.querySelector('[data-lang-trigger]');
+        if (trigger) {
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    selectorElements.forEach((selector) => {
+      const trigger = selector.querySelector('[data-lang-trigger]');
+      const options = selector.querySelectorAll('[data-lang-option]');
+
+      trigger?.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const willOpen = !selector.classList.contains('is-open');
+        closeAllMenus();
+        if (willOpen) {
+          selector.classList.add('is-open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      options.forEach((option) => {
+        option.addEventListener('click', (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          const selectedLanguage = option.getAttribute('data-lang');
+          if (selectedLanguage) {
+            applyLanguage(selectedLanguage);
+          }
+          closeAllMenus();
+        });
+      });
+    });
+
+    document.addEventListener('click', closeAllMenus);
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeAllMenus();
+      }
+    });
+
+    hydrateLanguageOptionFlags();
+    applyLanguage(localStorage.getItem(storageKey) || 'en');
+  </script>
 </body>
 </html>
