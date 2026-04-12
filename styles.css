@@ -863,11 +863,6 @@ body.nav-open .menu-toggle span:nth-child(3) {
   background: var(--purple);
 }
 
-.social-linkedin svg {
-  width: 24px;
-  height: 24px;
-}
-
 /* ===== Bottom Nav ===== */
 .bottom-nav {
   background: var(--dark-purple);
