@@ -149,8 +149,8 @@
       </svg>
     </button>
     <ul class="lang-menu" role="listbox" aria-label="Language options">
-      <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="en"><span class="lang-option-label">🇬🇧 English</span></button></li>
-      <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="es"><span class="lang-option-label">🇪🇸 Español</span></button></li>
+      <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="en"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="UK flag" class="lang-flag" data-lang-option-flag data-lang-flag="en"><span class="lang-option-label">English</span></button></li>
+      <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="es"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Bandera de España" class="lang-flag" data-lang-option-flag data-lang-flag="es"><span class="lang-option-label">Español</span></button></li>
     </ul>
   </div>
 
@@ -191,6 +191,7 @@
     };
 
     const selectorElements = document.querySelectorAll('[data-lang-selector]');
+    const optionFlagElements = document.querySelectorAll('[data-lang-option-flag]');
     const storageKey = 'florabal-language';
 
     function applyLanguage(language) {
@@ -216,6 +217,15 @@
       });
 
       localStorage.setItem(storageKey, selectedLanguage);
+    }
+
+    function hydrateLanguageOptionFlags() {
+      optionFlagElements.forEach((flag) => {
+        const optionLanguage = flag.getAttribute('data-lang-flag');
+        if (optionLanguage && flagByLanguage[optionLanguage]) {
+          flag.src = `data:image/svg+xml,${encodeURIComponent(flagByLanguage[optionLanguage])}`;
+        }
+      });
     }
 
     function closeAllMenus() {
@@ -262,6 +272,7 @@
       }
     });
 
+    hydrateLanguageOptionFlags();
     applyLanguage(localStorage.getItem(storageKey) || 'en');
   </script>
 </body>

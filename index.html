@@ -36,27 +36,35 @@
           <img src="https://www.figma.com/api/mcp/asset/7f78518b-f1ac-4896-90ff-1c907b80309f" alt="FloraBal Logo" class="logo-img-crop">
         </div>
       </a>
-      <ul class="nav-links">
-        <li><a href="wip.html" data-i18n="nav.whoWeAre">Who we are</a></li>
-        <li><a href="wip.html" data-i18n="nav.howItWorks">How it works</a></li>
-        <li><a href="wip.html" data-i18n="nav.kitFloraBal">KitFloraBal</a></li>
-        <li><a href="wip.html" data-i18n="nav.blog">Blog</a></li>
-      </ul>
-      <div class="lang-selector" data-lang-selector>
-        <button class="lang-selector-trigger" type="button" data-lang-trigger aria-haspopup="listbox" aria-expanded="false" aria-label="Change language">
-          <img src="" alt="UK flag" class="lang-flag" data-lang-current-flag>
-          <span class="lang-text" data-i18n="lang.current">English</span>
-          <svg class="lang-caret" width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <ul class="lang-menu" role="listbox" aria-label="Language options">
-          <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="en"><span class="lang-option-label">🇬🇧 English</span></button></li>
-          <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="es"><span class="lang-option-label">🇪🇸 Español</span></button></li>
+      <button type="button" class="menu-toggle" data-menu-toggle aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-actions" id="primary-navigation" data-mobile-drawer>
+        <ul class="nav-links">
+          <li><a href="wip.html" data-i18n="nav.whoWeAre">Who we are</a></li>
+          <li><a href="wip.html" data-i18n="nav.howItWorks">How it works</a></li>
+          <li><a href="wip.html" data-i18n="nav.kitFloraBal">KitFloraBal</a></li>
+          <li><a href="wip.html" data-i18n="nav.blog">Blog</a></li>
         </ul>
+        <div class="lang-selector" data-lang-selector>
+          <button class="lang-selector-trigger" type="button" data-lang-trigger aria-haspopup="listbox" aria-expanded="false" aria-label="Change language">
+            <img src="" alt="UK flag" class="lang-flag" data-lang-current-flag>
+            <span class="lang-text" data-i18n="lang.current">English</span>
+            <svg class="lang-caret" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="lang-menu" role="listbox" aria-label="Language options">
+            <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="en"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="UK flag" class="lang-flag" data-lang-option-flag data-lang-flag="en"><span class="lang-option-label">English</span></button></li>
+            <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="es"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Bandera de España" class="lang-flag" data-lang-option-flag data-lang-flag="es"><span class="lang-option-label">Español</span></button></li>
+          </ul>
+        </div>
       </div>
     </nav>
   </header>
+  <div class="mobile-nav-overlay" data-mobile-overlay></div>
 
   <!-- ===== Hero Section ===== -->
   <section class="hero">
@@ -339,8 +347,8 @@
             </svg>
           </button>
           <ul class="lang-menu" role="listbox" aria-label="Language options">
-            <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="en"><span class="lang-option-label">🇬🇧 English</span></button></li>
-            <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="es"><span class="lang-option-label">🇪🇸 Español</span></button></li>
+            <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="en"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="UK flag" class="lang-flag" data-lang-option-flag data-lang-flag="en"><span class="lang-option-label">English</span></button></li>
+            <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="es"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Bandera de España" class="lang-flag" data-lang-option-flag data-lang-flag="es"><span class="lang-option-label">Español</span></button></li>
           </ul>
         </div>
       </div>
@@ -474,7 +482,12 @@
     };
 
     const selectorElements = document.querySelectorAll('[data-lang-selector]');
+    const optionFlagElements = document.querySelectorAll('[data-lang-option-flag]');
     const storageKey = 'florabal-language';
+    const menuToggle = document.querySelector('[data-menu-toggle]');
+    const mobileDrawer = document.querySelector('[data-mobile-drawer]');
+    const mobileOverlay = document.querySelector('[data-mobile-overlay]');
+    const mobileMenuLinks = document.querySelectorAll('.nav-links a');
 
     function applyLanguage(language) {
       const selectedLanguage = translations[language] ? language : 'en';
@@ -507,6 +520,15 @@
       localStorage.setItem(storageKey, selectedLanguage);
     }
 
+    function hydrateLanguageOptionFlags() {
+      optionFlagElements.forEach((flag) => {
+        const optionLanguage = flag.getAttribute('data-lang-flag');
+        if (optionLanguage && flagByLanguage[optionLanguage]) {
+          flag.src = `data:image/svg+xml,${encodeURIComponent(flagByLanguage[optionLanguage])}`;
+        }
+      });
+    }
+
     function closeAllMenus() {
       selectorElements.forEach((selector) => {
         selector.classList.remove('is-open');
@@ -515,6 +537,26 @@
           trigger.setAttribute('aria-expanded', 'false');
         }
       });
+    }
+
+    function closeMobileNavigation() {
+      document.body.classList.remove('nav-open');
+      if (menuToggle) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation menu');
+      }
+    }
+
+    function toggleMobileNavigation() {
+      const willOpen = !document.body.classList.contains('nav-open');
+      document.body.classList.toggle('nav-open', willOpen);
+      if (menuToggle) {
+        menuToggle.setAttribute('aria-expanded', String(willOpen));
+        menuToggle.setAttribute('aria-label', willOpen ? 'Close navigation menu' : 'Open navigation menu');
+      }
+      if (!willOpen) {
+        closeAllMenus();
+      }
     }
 
     selectorElements.forEach((selector) => {
@@ -544,13 +586,36 @@
       });
     });
 
+    menuToggle?.addEventListener('click', (event) => {
+      event.stopPropagation();
+      toggleMobileNavigation();
+    });
+
+    mobileDrawer?.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+
+    mobileOverlay?.addEventListener('click', closeMobileNavigation);
+
+    mobileMenuLinks.forEach((link) => {
+      link.addEventListener('click', closeMobileNavigation);
+    });
+
     document.addEventListener('click', closeAllMenus);
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') {
+        closeMobileNavigation();
         closeAllMenus();
       }
     });
 
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        closeMobileNavigation();
+      }
+    });
+
+    hydrateLanguageOptionFlags();
     applyLanguage(localStorage.getItem(storageKey) || 'en');
   </script>
 </body>
