@@ -1214,11 +1214,12 @@ html[lang="es"] .btn-contact {
   }
 
   .hero-title {
-    font-size: clamp(72px, 24vw, 120px);
+    font-size: clamp(64px, 24vw, 120px);
     letter-spacing: -0.04em;
     line-height: 0.9;
     white-space: nowrap;
     width: 100%;
+    max-width: 100%;
   }
 
   .hero-title-wrapper {
