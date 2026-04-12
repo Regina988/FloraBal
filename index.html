@@ -78,7 +78,7 @@
           <span class="text-lilac" data-i18n="whatIs.headingBrand"> FLORABAL</span><span class="text-white" data-i18n="whatIs.headingSuffix">?</span>
         </h2>
         <p class="what-is-text" data-i18n="whatIs.paragraph1">
-          FloraBal is a rapid vaginal health diagnostic kit designed to detect infections quickly, easily, and without the need for a laboratory or clinical visit. It belongs to a new generation of FemTech solutions with the objective of making women's healthcare more accesible, private and user-friendly.
+          FloraBal is a rapid vaginal health diagnostic kit designed to detect infections quickly, easily, and without the need for a laboratory or clinical visit. It belongs to a new generation of FemTech solutions with the objective of making women's healthcare more accessible, private and user-friendly.
         </p>
         <p class="what-is-text" data-i18n="whatIs.paragraph2">
           Using advanced biomarker detection technology, FloraBal delivers reliable results in minutes, helping users make informed decisions about their health.
@@ -134,7 +134,7 @@
                     </svg>
                   </div>
                   <h4 data-i18n="problem.card3.title">Wrong treatment</h4>
-                  <p data-i18n="problem.card3.text">Misdiagnosis lead to recurring infections and complications.</p>
+                  <p data-i18n="problem.card3.text">Misdiagnosis leads to recurring infections and complications.</p>
                 </div>
               </div>
               <div class="problem-callout">
@@ -206,7 +206,7 @@
               <path d="M26 6C14.96 6 6 14.96 6 26s8.96 20 20 20 20-8.96 20-20S37.04 6 26 6zm0 36c-8.84 0-16-7.16-16-16S17.16 10 26 10s16 7.16 16 16-7.16 16-16 16zm-2-26h4v12h-4V16zm0 16h4v4h-4v-4z" fill="#34026f"/>
             </svg>
           </div>
-          <h3 data-i18n="why.card2.title">Fast, affordable & accesible</h3>
+          <h3 data-i18n="why.card2.title">Fast, affordable & accessible</h3>
           <p data-i18n="why.card2.text">Results in 15 minutes at a fraction of the cost. No clinic visit, no lab, no waiting days for answers.</p>
         </div>
         <div class="why-card">
@@ -347,7 +347,7 @@
         'whatIs.headingPrefix': 'WHAT IS',
         'whatIs.headingBrand': ' FLORABAL',
         'whatIs.headingSuffix': '?',
-        'whatIs.paragraph1': "FloraBal is a rapid vaginal health diagnostic kit designed to detect infections quickly, easily, and without the need for a laboratory or clinical visit. It belongs to a new generation of FemTech solutions with the objective of making women's healthcare more accesible, private and user-friendly.",
+        'whatIs.paragraph1': "FloraBal is a rapid vaginal health diagnostic kit designed to detect infections quickly, easily, and without the need for a laboratory or clinical visit. It belongs to a new generation of FemTech solutions with the objective of making women's healthcare more accessible, private and user-friendly.",
         'whatIs.paragraph2': 'Using advanced biomarker detection technology, FloraBal delivers reliable results in minutes, helping users make informed decisions about their health.',
         'buttons.howItWorks': 'How it works',
         'buttons.whoWeAre': 'Who we are',
@@ -359,7 +359,7 @@
         'problem.card2.title': 'Self-medication',
         'problem.card2.text': 'Symptoms treated without identifying the actual cause.',
         'problem.card3.title': 'Wrong treatment',
-        'problem.card3.text': 'Misdiagnosis lead to recurring infections and complications.',
+        'problem.card3.text': 'Misdiagnosis leads to recurring infections and complications.',
         'problem.callout': 'This cycle drives up complications, including elevated STI risk and pregnancy issues while adding costs that could be avoided with a timely, accurate diagnosis.',
         'solution.headingPrefix': 'OUR ',
         'solution.headingMain': 'SOLUTION',
@@ -378,7 +378,7 @@
         'why.subtitle': 'A solution built from ground up for the women who need it most. Fast, accurate, and designed for real life',
         'why.card1.title': '100% women-led team',
         'why.card1.text': "Built by women in biotech and health innovation with firsthand understanding of the problem we're solving",
-        'why.card2.title': 'Fast, affordable & accesible',
+        'why.card2.title': 'Fast, affordable & accessible',
         'why.card2.text': 'Results in 15 minutes at a fraction of the cost. No clinic visit, no lab, no waiting days for answers.',
         'why.card3.title': 'Designed for real-world impact',
         'why.card3.text': 'Targeted at underserved and high-need communities where access to traditional diagnostics is limited',
@@ -505,7 +505,7 @@
     selectorElements.forEach((selector) => {
       selector.addEventListener('click', toggleLanguage);
       selector.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
+        if (event.key === 'Enter' || event.code === 'Space') {
           event.preventDefault();
           toggleLanguage();
         }
