@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FloraBal - Coming Soon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="assets/logocorto.png" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -26,13 +26,21 @@
       justify-content: center;
       margin-bottom: 60px;
     }
-    .wip-logo-crop {
+
+    .bottom-nav-logo {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .bottom-nav-logo-crop {
       width: 79px;
       height: 66px;
       position: relative;
       overflow: hidden;
     }
-    .wip-logo-img {
+
+    .bottom-logo-img-crop {
       position: absolute;
       width: 815.18%;
       max-width: none;
@@ -159,9 +167,9 @@
     </ul>
   </div>
 
-  <a href="index.html" class="wip-logo" aria-label="FloraBal Home">
-    <div class="wip-logo-crop">
-      <img src="https://www.figma.com/api/mcp/asset/dd02a08c-ef44-49fe-b847-50de80b6694a" alt="FloraBal" class="wip-logo-img">
+  <a href="index.html" class="wip-logo bottom-nav-logo" aria-label="FloraBal Home">
+    <div class="bottom-nav-logo-crop">
+      <img src="https://www.figma.com/api/mcp/asset/dd02a08c-ef44-49fe-b847-50de80b6694a" alt="FloraBal" class="bottom-logo-img-crop">
     </div>
   </a>
 
