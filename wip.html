@@ -23,17 +23,22 @@
     .wip-logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      justify-content: center;
       margin-bottom: 60px;
     }
-    .wip-logo img { width: 50px; height: 50px; object-fit: contain; }
-    .wip-logo span {
-      font-family: 'Inter', sans-serif;
-      font-size: 28px;
-      font-weight: 600;
-      color: #fff;
+    .wip-logo-crop {
+      width: 79px;
+      height: 66px;
+      position: relative;
+      overflow: hidden;
     }
-    .wip-logo span b { color: #E9CDFD; }
+    .wip-logo-img {
+      width: 79px;
+      height: 66px;
+      object-fit: cover;
+      object-position: 0 0;
+      display: block;
+    }
     .lang-selector {
       position: fixed;
       top: 20px;
@@ -154,10 +159,11 @@
     </ul>
   </div>
 
-  <div class="wip-logo">
-    <img src="assets/logo-icon.png" alt="FloraBal Logo">
-    <span>flora<b>Bal</b></span>
-  </div>
+  <a href="index.html" class="wip-logo" aria-label="FloraBal Home">
+    <div class="wip-logo-crop">
+      <img src="https://www.figma.com/api/mcp/asset/dd02a08c-ef44-49fe-b847-50de80b6694a" alt="FloraBal" class="wip-logo-img">
+    </div>
+  </a>
 
   <div class="badge"><span data-i18n="wip.badge">Work in Progress</span></div>
 

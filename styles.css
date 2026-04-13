@@ -614,13 +614,15 @@ body.nav-open .menu-toggle span:nth-child(3) {
   border: 1px solid rgba(233, 205, 253, 0.28);
   box-shadow: 0 22px 48px rgba(0, 0, 0, 0.25);
   align-self: stretch;
+  position: relative;
 }
 
 .solution-image {
-  display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /* ===== Why FloraBal ===== */
@@ -855,24 +857,25 @@ body.nav-open .menu-toggle span:nth-child(3) {
   height: 45px;
   border-radius: 50%;
   background: var(--social-circle-bg);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.social-link img,
+.social-link svg {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
 }
 
 .social-link img {
-  width: 100%;
-  height: 100%;
+  filter: brightness(0) invert(1);
 }
 
-.social-linkedin {
-  background: var(--purple);
+.social-link svg {
   color: var(--white);
 }
 
-.social-linkedin svg {
-  width: 24px;
-  height: 24px;
-}
-
-.social-linkedin svg path {
+.social-link svg path {
   fill: currentColor;
 }
 
@@ -948,6 +951,8 @@ body.nav-open .menu-toggle span:nth-child(3) {
 }
 
 .lang-selector-dark .lang-menu {
+  top: auto;
+  bottom: calc(100% + 8px);
   border-color: var(--white);
   background: var(--dark-purple);
 }
