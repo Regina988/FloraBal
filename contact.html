@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FloraBal - Contact</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="contact-page">
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-crop">
+          <img src="https://www.figma.com/api/mcp/asset/7f78518b-f1ac-4896-90ff-1c907b80309f" alt="FloraBal Logo" class="logo-img-crop">
+        </div>
+      </a>
+      <button type="button" class="menu-toggle" data-menu-toggle aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-actions" id="primary-navigation" data-mobile-drawer>
+        <ul class="nav-links">
+          <li><a href="wip.html" data-i18n="nav.whoWeAre">Who we are</a></li>
+          <li><a href="wip.html" data-i18n="nav.howItWorks">How it works</a></li>
+          <li><a href="wip.html" data-i18n="nav.kitFloraBal">KitFloraBal</a></li>
+          <li><a href="wip.html" data-i18n="nav.blog">Blog</a></li>
+        </ul>
+        <div class="lang-selector" data-lang-selector>
+          <button class="lang-selector-trigger" type="button" data-lang-trigger aria-haspopup="listbox" aria-expanded="false" aria-label="Change language">
+            <img src="" alt="UK flag" class="lang-flag" data-lang-current-flag>
+            <span class="lang-text" data-i18n="lang.current">English</span>
+            <svg class="lang-caret" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="lang-menu" role="listbox" aria-label="Language options">
+            <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="en"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="UK flag" class="lang-flag" data-lang-option-flag data-lang-flag="en"><span class="lang-option-label">English</span></button></li>
+            <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="es"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Bandera de España" class="lang-flag" data-lang-option-flag data-lang-flag="es"><span class="lang-option-label">Español</span></button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="mobile-nav-overlay" data-mobile-overlay></div>
+
+  <main class="contact-main">
+    <section class="contact-hero">
+      <div class="contact-hero-inner">
+        <div class="contact-copy">
+          <h1 class="contact-heading">
+            <span data-i18n="contact.headingPrefix">LET'S</span>
+            <span class="text-lilac" data-i18n="contact.headingHighlight">CONNECT</span>
+          </h1>
+          <p class="contact-lead" data-i18n="contact.lead">
+            We’re building the future of intimate health. Send us a message and our team will get back to you soon.
+          </p>
+          <div class="contact-info-list">
+            <div class="contact-info-card">
+              <p class="contact-info-label" data-i18n="contact.info.email.label">Email</p>
+              <a href="mailto:hello@florabal.com" class="contact-info-value">hello@florabal.com</a>
+            </div>
+            <div class="contact-info-card">
+              <p class="contact-info-label" data-i18n="contact.info.location.label">Location</p>
+              <p class="contact-info-value" data-i18n="contact.info.location.value">Mexico City, Mexico</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form">
+          <div class="contact-field-grid">
+            <div class="contact-field">
+              <label for="contact-name" data-i18n="contact.form.name">Name</label>
+              <input id="contact-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="contact-field">
+              <label for="contact-email" data-i18n="contact.form.email">Email</label>
+              <input id="contact-email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="contact-field">
+            <label for="contact-company" data-i18n="contact.form.company">Organization</label>
+            <input id="contact-company" name="company" type="text" autocomplete="organization">
+          </div>
+          <div class="contact-field">
+            <label for="contact-message" data-i18n="contact.form.message">Message</label>
+            <textarea id="contact-message" name="message" rows="5" required></textarea>
+          </div>
+          <button class="btn-contact-submit" type="submit" data-i18n="contact.form.submit">Send Message</button>
+          <p class="contact-form-note" data-i18n="contact.form.note">By submitting this form, you agree to be contacted by the FloraBal team.</p>
+          <p class="contact-submit-feedback" data-form-feedback aria-live="polite"></p>
+          <a href="#" class="contact-mailto-link" data-mailto-link hidden data-i18n="contact.form.openDraft">Open email draft</a>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-section contact-footer">
+    <div class="footer-white-ellipse"></div>
+    <div class="footer-content">
+      <div class="footer-top-content">
+        <h2 class="footer-heading" data-i18n="footer.heading">Let's stay connected</h2>
+        <p class="footer-subtext" data-i18n="footer.subtext">FloraBal. FemTech. Intimate Health.</p>
+      </div>
+      <div class="social-icons">
+        <a href="wip.html" class="social-link" aria-label="Facebook">
+          <img src="https://www.figma.com/api/mcp/asset/e11e60f7-cea5-4b89-84c3-7c060d183990" alt="Facebook">
+        </a>
+        <a href="wip.html" class="social-link" aria-label="Instagram">
+          <img src="https://www.figma.com/api/mcp/asset/6de7e89c-67b3-40a7-8d57-e73ece543006" alt="Instagram">
+        </a>
+        <a href="wip.html" class="social-link" aria-label="LinkedIn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5.3 8.6a1.9 1.9 0 1 1 0-3.8 1.9 1.9 0 0 1 0 3.8ZM3.8 20V9.8h3V20h-3Zm4.9 0V9.8h2.9v1.4h.1c.4-.8 1.4-1.6 2.8-1.6 3 0 3.5 2 3.5 4.5V20h-3v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V20h-2.9Z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <nav class="bottom-nav">
+      <div class="bottom-nav-inner">
+        <a href="index.html" class="bottom-nav-logo">
+          <div class="bottom-nav-logo-crop">
+            <img src="https://www.figma.com/api/mcp/asset/dd02a08c-ef44-49fe-b847-50de80b6694a" alt="FloraBal" class="bottom-logo-img-crop">
+          </div>
+        </a>
+        <ul class="bottom-nav-links">
+          <li><a href="wip.html" data-i18n="nav.whoWeAre">Who we are</a></li>
+          <li><a href="wip.html" data-i18n="nav.howItWorks">How it works</a></li>
+          <li><a href="wip.html" data-i18n="nav.kitFloraBal">KitFloraBal</a></li>
+          <li><a href="wip.html" data-i18n="nav.blog">Blog</a></li>
+        </ul>
+        <div class="lang-selector lang-selector-dark" data-lang-selector>
+          <button class="lang-selector-trigger" type="button" data-lang-trigger aria-haspopup="listbox" aria-expanded="false" aria-label="Change language">
+            <img src="" alt="UK flag" class="lang-flag" data-lang-current-flag>
+            <span class="lang-text" data-i18n="lang.current">English</span>
+            <svg class="lang-caret" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="lang-menu" role="listbox" aria-label="Language options">
+            <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="en"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="UK flag" class="lang-flag" data-lang-option-flag data-lang-flag="en"><span class="lang-option-label">English</span></button></li>
+            <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="es"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Bandera de España" class="lang-flag" data-lang-option-flag data-lang-flag="es"><span class="lang-option-label">Español</span></button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        'lang.current': 'English',
+        'nav.whoWeAre': 'Who we are',
+        'nav.howItWorks': 'How it works',
+        'nav.kitFloraBal': 'KitFloraBal',
+        'nav.blog': 'Blog',
+        'contact.headingPrefix': "LET'S",
+        'contact.headingHighlight': 'CONNECT',
+        'contact.lead': 'We’re building the future of intimate health. Send us a message and our team will get back to you soon.',
+        'contact.info.email.label': 'Email',
+        'contact.info.location.label': 'Location',
+        'contact.info.location.value': 'Mexico City, Mexico',
+        'contact.form.name': 'Name',
+        'contact.form.email': 'Email',
+        'contact.form.company': 'Organization',
+        'contact.form.message': 'Message',
+        'contact.form.submit': 'Send Message',
+        'contact.form.note': 'By submitting this form, you agree to be contacted by the FloraBal team.',
+        'contact.form.success': 'Thanks! Your message has been prepared. Please review and send it from your email app.',
+        'contact.form.subject': 'FloraBal Contact',
+        'contact.form.label.name': 'Name',
+        'contact.form.label.email': 'Email',
+        'contact.form.label.company': 'Organization',
+        'contact.form.label.message': 'Message',
+        'contact.form.openDraft': 'Open email draft',
+        'footer.heading': "Let's stay connected",
+        'footer.subtext': 'FloraBal. FemTech. Intimate Health.'
+      },
+      es: {
+        'lang.current': 'Español',
+        'nav.whoWeAre': 'Quiénes somos',
+        'nav.howItWorks': 'Cómo funciona',
+        'nav.kitFloraBal': 'KitFloraBal',
+        'nav.blog': 'Blog',
+        'contact.headingPrefix': 'HABLEMOS',
+        'contact.headingHighlight': 'HOY',
+        'contact.lead': 'Estamos construyendo el futuro de la salud íntima. Envíanos un mensaje y nuestro equipo te responderá pronto.',
+        'contact.info.email.label': 'Correo',
+        'contact.info.location.label': 'Ubicación',
+        'contact.info.location.value': 'Ciudad de México, México',
+        'contact.form.name': 'Nombre',
+        'contact.form.email': 'Correo',
+        'contact.form.company': 'Organización',
+        'contact.form.message': 'Mensaje',
+        'contact.form.submit': 'Enviar mensaje',
+        'contact.form.note': 'Al enviar este formulario, aceptas que el equipo de FloraBal se comunique contigo.',
+        'contact.form.success': '¡Gracias! Tu mensaje quedó listo. Revísalo y envíalo desde tu app de correo.',
+        'contact.form.subject': 'Contacto FloraBal',
+        'contact.form.label.name': 'Nombre',
+        'contact.form.label.email': 'Correo',
+        'contact.form.label.company': 'Organización',
+        'contact.form.label.message': 'Mensaje',
+        'contact.form.openDraft': 'Abrir borrador de correo',
+        'footer.heading': 'Sigamos en contacto',
+        'footer.subtext': 'FloraBal. FemTech. Salud íntima.'
+      }
+    };
+
+    const flagByLanguage = {
+      en: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 24'><rect width='36' height='24' fill='#012169'/><path d='M0 0l36 24M36 0L0 24' stroke='#fff' stroke-width='5'/><path d='M0 0l36 24M36 0L0 24' stroke='#C8102E' stroke-width='2.5'/><path d='M18 0v24M0 12h36' stroke='#fff' stroke-width='8'/><path d='M18 0v24M0 12h36' stroke='#C8102E' stroke-width='4'/></svg>",
+      es: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 24'><rect width='36' height='24' fill='#c60b1e'/><rect y='6' width='36' height='12' fill='#ffc400'/></svg>"
+    };
+
+    const selectorElements = document.querySelectorAll('[data-lang-selector]');
+    const optionFlagElements = document.querySelectorAll('[data-lang-option-flag]');
+    const storageKey = 'florabal-language';
+    const menuToggle = document.querySelector('[data-menu-toggle]');
+    const mobileDrawer = document.querySelector('[data-mobile-drawer]');
+    const mobileOverlay = document.querySelector('[data-mobile-overlay]');
+    const mobileMenuLinks = document.querySelectorAll('.nav-links a');
+    const contactForm = document.querySelector('.contact-form');
+    const formFeedback = document.querySelector('[data-form-feedback]');
+    const mailtoLink = document.querySelector('[data-mailto-link]');
+
+    function applyLanguage(language) {
+      const selectedLanguage = translations[language] ? language : 'en';
+      const languageMap = translations[selectedLanguage];
+
+      document.documentElement.lang = selectedLanguage;
+      document.title = selectedLanguage === 'es' ? 'FloraBal - Contacto' : 'FloraBal - Contact';
+
+      document.querySelectorAll('[data-i18n]').forEach((element) => {
+        const key = element.getAttribute('data-i18n');
+        if (languageMap[key] !== undefined) {
+          element.textContent = languageMap[key];
+        }
+      });
+
+      selectorElements.forEach((selector) => {
+        const flag = selector.querySelector('[data-lang-current-flag]');
+        if (flag) {
+          flag.src = `data:image/svg+xml,${encodeURIComponent(flagByLanguage[selectedLanguage])}`;
+          flag.alt = selectedLanguage === 'es' ? 'Bandera de España' : 'UK flag';
+        }
+      });
+
+      localStorage.setItem(storageKey, selectedLanguage);
+
+      if (formFeedback) {
+        formFeedback.textContent = '';
+      }
+
+      if (mailtoLink) {
+        mailtoLink.textContent = languageMap['contact.form.openDraft'];
+      }
+    }
+
+    function hydrateLanguageOptionFlags() {
+      optionFlagElements.forEach((flag) => {
+        const optionLanguage = flag.getAttribute('data-lang-flag');
+        if (optionLanguage && flagByLanguage[optionLanguage]) {
+          flag.src = `data:image/svg+xml,${encodeURIComponent(flagByLanguage[optionLanguage])}`;
+        }
+      });
+    }
+
+    function closeAllMenus() {
+      selectorElements.forEach((selector) => {
+        selector.classList.remove('is-open');
+        const trigger = selector.querySelector('[data-lang-trigger]');
+        if (trigger) {
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    function closeMobileNavigation() {
+      document.body.classList.remove('nav-open');
+      if (menuToggle) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation menu');
+      }
+    }
+
+    function toggleMobileNavigation() {
+      const willOpen = !document.body.classList.contains('nav-open');
+      document.body.classList.toggle('nav-open', willOpen);
+      if (menuToggle) {
+        menuToggle.setAttribute('aria-expanded', String(willOpen));
+        menuToggle.setAttribute('aria-label', willOpen ? 'Close navigation menu' : 'Open navigation menu');
+      }
+    }
+
+    selectorElements.forEach((selector) => {
+      const trigger = selector.querySelector('[data-lang-trigger]');
+      const options = selector.querySelectorAll('[data-lang-option]');
+
+      trigger?.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const willOpen = !selector.classList.contains('is-open');
+        closeAllMenus();
+        if (willOpen) {
+          selector.classList.add('is-open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      options.forEach((option) => {
+        option.addEventListener('click', (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          const selectedLanguage = option.getAttribute('data-lang');
+          if (selectedLanguage) {
+            applyLanguage(selectedLanguage);
+          }
+          closeAllMenus();
+        });
+      });
+    });
+
+    menuToggle?.addEventListener('click', () => {
+      closeAllMenus();
+      toggleMobileNavigation();
+    });
+
+    mobileOverlay?.addEventListener('click', closeMobileNavigation);
+
+    mobileMenuLinks.forEach((link) => {
+      link.addEventListener('click', closeMobileNavigation);
+    });
+
+    contactForm?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const selectedLanguage = document.documentElement.lang === 'es' ? 'es' : 'en';
+      const languageMap = translations[selectedLanguage];
+
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+
+      const name = contactForm.elements.namedItem('name')?.value?.trim() || '';
+      const email = contactForm.elements.namedItem('email')?.value?.trim() || '';
+      const company = contactForm.elements.namedItem('company')?.value?.trim() || '';
+      const message = contactForm.elements.namedItem('message')?.value?.trim() || '';
+      const mailSubject = name ? `${languageMap['contact.form.subject']} - ${name}` : languageMap['contact.form.subject'];
+      const mailBody = [
+        `${languageMap['contact.form.label.name']}: ${name || '-'}`,
+        `${languageMap['contact.form.label.email']}: ${email || '-'}`,
+        `${languageMap['contact.form.label.company']}: ${company || '-'}`,
+        '',
+        `${languageMap['contact.form.label.message']}:`,
+        message || '-'
+      ].join('\n');
+      const mailQuery = new URLSearchParams({ subject: mailSubject, body: mailBody }).toString();
+
+      if (formFeedback) {
+        formFeedback.textContent = languageMap['contact.form.success'];
+      }
+
+      if (mailtoLink) {
+        mailtoLink.href = `mailto:hello@florabal.com?${mailQuery}`;
+        mailtoLink.hidden = false;
+      }
+    });
+
+    document.addEventListener('click', closeAllMenus);
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeAllMenus();
+        closeMobileNavigation();
+      }
+    });
+
+    mobileDrawer?.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+
+    hydrateLanguageOptionFlags();
+    applyLanguage(localStorage.getItem(storageKey) || 'en');
+  </script>
+</body>
+</html>
