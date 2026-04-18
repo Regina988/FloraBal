@@ -1664,7 +1664,7 @@ body.contact-page {
 /* --- Contact Info band (gradient) --- */
 .contact-info-band {
   position: relative;
-  padding: 80px 60px 220px;
+  padding: 80px 60px 100px;
   background: linear-gradient(
     to top,
     #34026f 0%,
@@ -1838,7 +1838,7 @@ body.contact-page {
   .contact-form-card { padding: 28px 20px 40px; border-radius: 30px; }
   .cf-row { grid-template-columns: 1fr; }
 
-  .contact-info-band { padding: 60px 24px 200px; }
+  .contact-info-band { padding: 60px 24px 80px; }
   .contact-info-band__cards { flex-direction: column; gap: 8px; }
   .info-card { padding: 16px 0; }
 
