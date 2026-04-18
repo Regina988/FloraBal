@@ -9,27 +9,27 @@
 </head>
 <body class="contact-page">
 
-  <!-- PILL HEADER -->
-  <header class="pill-header">
-    <nav class="pill-nav">
-      <a href="index.html" class="pill-nav__logo">
-        <span class="pill-nav__logo-icon">&#x1F33F;</span>
-        <span class="pill-nav__logo-text">FloraBal</span>
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">
+        <div class="logo-icon">&#x1F33F;</div>
+        <span>FloraBal</span>
       </a>
-      <ul class="pill-nav__links">
-        <li><a href="about.html"><span data-lang-es>Nosotros</span><span data-lang-en>Who we are</span></a></li>
-        <li><a href="how-it-works.html"><span data-lang-es>Cómo Funciona</span><span data-lang-en>How it works</span></a></li>
-        <li><a href="contact.html" class="is-active"><span data-lang-es>Contacto</span><span data-lang-en>Contact</span></a></li>
-        <li><a href="blog.html">Blog</a></li>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link"><span data-lang-es>Inicio</span><span data-lang-en>Home</span></a></li>
+        <li><a href="product.html" class="nav__link"><span data-lang-es>Producto</span><span data-lang-en>Product</span></a></li>
+        <li><a href="how-it-works.html" class="nav__link"><span data-lang-es>Cómo Funciona</span><span data-lang-en>How It Works</span></a></li>
+        <li><a href="about.html" class="nav__link"><span data-lang-es>Nosotros</span><span data-lang-en>About Us</span></a></li>
+        <li><a href="blog.html" class="nav__link">Blog</a></li>
+        <li><a href="contact.html" class="nav__link active"><span data-lang-es>Contacto</span><span data-lang-en>Contact</span></a></li>
       </ul>
-      <div class="pill-lang">
-        <span class="pill-lang__flag" aria-hidden="true">&#x1F1EC;&#x1F1E7;</span>
-        <span class="pill-lang__text"><span data-lang-es>Español</span><span data-lang-en>English</span></span>
-        <span class="pill-lang__caret" aria-hidden="true">&#x25BE;</span>
-        <div class="pill-lang__menu">
+      <div class="nav__actions">
+        <div class="lang-switcher">
           <button class="lang-btn active" data-lang="es">ES</button>
           <button class="lang-btn" data-lang="en">EN</button>
         </div>
+        <button class="nav__hamburger"><span></span><span></span><span></span></button>
       </div>
     </nav>
   </header>
@@ -137,24 +137,52 @@
       </div>
     </div>
 
-    <!-- FOOTER PILL NAV (sits on top of gradient) -->
-    <nav class="pill-footer-nav">
-      <a href="index.html" class="pill-footer-nav__logo" aria-label="FloraBal">
-        <span>&#x1F33F;</span>
-      </a>
-      <ul class="pill-footer-nav__links">
-        <li><a href="about.html" class="is-active"><span data-lang-es>Nosotros</span><span data-lang-en>Who we are</span></a></li>
-        <li><a href="how-it-works.html"><span data-lang-es>Cómo Funciona</span><span data-lang-en>How it works</span></a></li>
-        <li><a href="contact.html"><span data-lang-es>Contacto</span><span data-lang-en>Contact</span></a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-      <div class="pill-footer-nav__lang">
-        <span class="pill-lang__flag" aria-hidden="true">&#x1F1EC;&#x1F1E7;</span>
-        <span><span data-lang-es>Español</span><span data-lang-en>English</span></span>
-        <span aria-hidden="true">&#x25BE;</span>
-      </div>
-    </nav>
   </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer__brand-name">&#x1F33F; FloraBal</div>
+          <p class="footer__brand-text">
+            <span data-lang-es>Biotecnología de salud femenina para la mujer latinoamericana.</span>
+            <span data-lang-en>Women's health biotechnology for Latin American women.</span>
+          </p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link">&#x1F426;</a>
+            <a href="#" class="footer__social-link">&#x1F4F7;</a>
+            <a href="#" class="footer__social-link">&#x1F4F1;</a>
+            <a href="#" class="footer__social-link">&#x1F517;</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading"><span data-lang-es>Producto</span><span data-lang-en>Product</span></h4>
+          <a href="product.html" class="footer__link"><span data-lang-es>Kit FloraBal</span><span data-lang-en>FloraBal Kit</span></a>
+          <a href="how-it-works.html" class="footer__link"><span data-lang-es>Cómo Funciona</span><span data-lang-en>How It Works</span></a>
+          <a href="#" class="footer__link">FAQ</a>
+        </div>
+        <div>
+          <h4 class="footer__heading"><span data-lang-es>Empresa</span><span data-lang-en>Company</span></h4>
+          <a href="about.html" class="footer__link"><span data-lang-es>Nosotros</span><span data-lang-en>About Us</span></a>
+          <a href="blog.html" class="footer__link">Blog</a>
+          <a href="contact.html" class="footer__link"><span data-lang-es>Contacto</span><span data-lang-en>Contact</span></a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Legal</h4>
+          <a href="#" class="footer__link"><span data-lang-es>Aviso de Privacidad</span><span data-lang-en>Privacy Policy</span></a>
+          <a href="#" class="footer__link"><span data-lang-es>Términos y Condiciones</span><span data-lang-en>Terms & Conditions</span></a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 FloraBal. <span data-lang-es>Todos los derechos reservados.</span><span data-lang-en>All rights reserved.</span></p>
+        <div class="footer__lang-switcher lang-switcher">
+          <button class="lang-btn active" data-lang="es">ES</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="js/main.js"></script>
 </body>
