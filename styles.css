@@ -1510,6 +1510,14 @@ html[lang="es"] .btn-contact {
   color: rgba(52, 2, 111, 0.75);
 }
 
+.contact-submit-feedback {
+  min-height: 20px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--purple);
+}
+
 .contact-footer {
   margin-top: 20px;
 }

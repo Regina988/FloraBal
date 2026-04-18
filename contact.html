@@ -68,7 +68,7 @@
           </div>
         </div>
 
-        <form class="contact-form" action="mailto:hello@florabal.com" method="post" enctype="text/plain">
+        <form class="contact-form" action="#" method="post">
           <div class="contact-field-grid">
             <div class="contact-field">
               <label for="contact-name" data-i18n="contact.form.name">Name</label>
@@ -89,6 +89,7 @@
           </div>
           <button class="btn-contact-submit" type="submit" data-i18n="contact.form.submit">Send Message</button>
           <p class="contact-form-note" data-i18n="contact.form.note">By submitting this form, you agree to be contacted by the FloraBal team.</p>
+          <p class="contact-submit-feedback" data-form-feedback aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -98,8 +99,8 @@
     <div class="footer-white-ellipse"></div>
     <div class="footer-content">
       <div class="footer-top-content">
-        <h2 class="footer-heading" data-i18n="footer.heading">Interested? Contact Us!</h2>
-        <p class="footer-subtext" data-i18n="footer.subtext">FloraBal. FemTech. Intimate Health.</p>
+        <h2 class="footer-heading" data-i18n="footer.heading">Thanks for reaching out!</h2>
+        <p class="footer-subtext" data-i18n="footer.subtext">We usually reply within 2 business days.</p>
       </div>
       <div class="social-icons">
         <a href="wip.html" class="social-link" aria-label="Facebook">
@@ -165,8 +166,9 @@
         'contact.form.message': 'Message',
         'contact.form.submit': 'Send Message',
         'contact.form.note': 'By submitting this form, you agree to be contacted by the FloraBal team.',
-        'footer.heading': 'Interested? Contact Us!',
-        'footer.subtext': 'FloraBal. FemTech. Intimate Health.'
+        'contact.form.success': 'Thanks! Your message has been prepared. Please review and send it from your email app.',
+        'footer.heading': 'Thanks for reaching out!',
+        'footer.subtext': 'We usually reply within 2 business days.'
       },
       es: {
         'lang.current': 'Español',
@@ -186,8 +188,9 @@
         'contact.form.message': 'Mensaje',
         'contact.form.submit': 'Enviar mensaje',
         'contact.form.note': 'Al enviar este formulario, aceptas que el equipo de FloraBal se comunique contigo.',
-        'footer.heading': '¿Interesada? ¡Contáctanos!',
-        'footer.subtext': 'FloraBal. FemTech. Salud íntima.'
+        'contact.form.success': '¡Gracias! Tu mensaje quedó listo. Revísalo y envíalo desde tu app de correo.',
+        'footer.heading': '¡Gracias por escribirnos!',
+        'footer.subtext': 'Normalmente respondemos dentro de 2 días hábiles.'
       }
     };
 
@@ -203,6 +206,8 @@
     const mobileDrawer = document.querySelector('[data-mobile-drawer]');
     const mobileOverlay = document.querySelector('[data-mobile-overlay]');
     const mobileMenuLinks = document.querySelectorAll('.nav-links a');
+    const contactForm = document.querySelector('.contact-form');
+    const formFeedback = document.querySelector('[data-form-feedback]');
 
     function applyLanguage(language) {
       const selectedLanguage = translations[language] ? language : 'en';
@@ -227,6 +232,10 @@
       });
 
       localStorage.setItem(storageKey, selectedLanguage);
+
+      if (formFeedback) {
+        formFeedback.textContent = '';
+      }
     }
 
     function hydrateLanguageOptionFlags() {
@@ -301,6 +310,23 @@
 
     mobileMenuLinks.forEach((link) => {
       link.addEventListener('click', closeMobileNavigation);
+    });
+
+    contactForm?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const selectedLanguage = document.documentElement.lang === 'es' ? 'es' : 'en';
+      const languageMap = translations[selectedLanguage];
+
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+
+      if (formFeedback) {
+        formFeedback.textContent = languageMap['contact.form.success'];
+      }
+
+      contactForm.reset();
     });
 
     document.addEventListener('click', closeAllMenus);
