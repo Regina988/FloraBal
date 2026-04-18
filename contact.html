@@ -166,8 +166,7 @@
         'contact.form.message': 'Message',
         'contact.form.submit': 'Send Message',
         'contact.form.note': 'By submitting this form, you agree to be contacted by the FloraBal team.',
-        'contact.form.success': 'Thanks! Your message has been prepared. Please review and send it from your email app.',
-        'contact.form.opening': 'Opening your email app...',
+        'contact.form.success': 'Thanks! Your message has been prepared. Please review and send it from your email app. Opening your email app...',
         'footer.heading': 'Thanks for reaching out!',
         'footer.subtext': 'We usually reply within 2 business days.'
       },
@@ -189,8 +188,7 @@
         'contact.form.message': 'Mensaje',
         'contact.form.submit': 'Enviar mensaje',
         'contact.form.note': 'Al enviar este formulario, aceptas que el equipo de FloraBal se comunique contigo.',
-        'contact.form.success': '¡Gracias! Tu mensaje quedó listo. Revísalo y envíalo desde tu app de correo.',
-        'contact.form.opening': 'Abriendo tu app de correo...',
+        'contact.form.success': '¡Gracias! Tu mensaje quedó listo. Revísalo y envíalo desde tu app de correo. Abriendo tu app de correo...',
         'footer.heading': '¡Gracias por escribirnos!',
         'footer.subtext': 'Normalmente respondemos dentro de 2 días hábiles.'
       }
@@ -340,9 +338,7 @@
       const mailQuery = new URLSearchParams({ subject: mailSubject, body: mailBody }).toString();
 
       if (formFeedback) {
-        formFeedback.textContent = `${languageMap['contact.form.success']} ${languageMap['contact.form.opening']}`;
-        formFeedback.setAttribute('tabindex', '-1');
-        formFeedback.focus();
+        formFeedback.textContent = languageMap['contact.form.success'];
       }
 
       contactForm.reset();
