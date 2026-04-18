@@ -90,6 +90,7 @@
           <button class="btn-contact-submit" type="submit" data-i18n="contact.form.submit">Send Message</button>
           <p class="contact-form-note" data-i18n="contact.form.note">By submitting this form, you agree to be contacted by the FloraBal team.</p>
           <p class="contact-submit-feedback" data-form-feedback aria-live="polite"></p>
+          <a href="#" class="contact-mailto-link" data-mailto-link hidden data-i18n="contact.form.openDraft">Open email draft</a>
         </form>
       </div>
     </section>
@@ -167,6 +168,12 @@
         'contact.form.submit': 'Send Message',
         'contact.form.note': 'By submitting this form, you agree to be contacted by the FloraBal team.',
         'contact.form.success': 'Thanks! Your message has been prepared. Please review and send it from your email app.',
+        'contact.form.subject': 'FloraBal Contact',
+        'contact.form.label.name': 'Name',
+        'contact.form.label.email': 'Email',
+        'contact.form.label.company': 'Organization',
+        'contact.form.label.message': 'Message',
+        'contact.form.openDraft': 'Open email draft',
         'footer.heading': 'Thanks for reaching out!',
         'footer.subtext': 'We usually reply within 2 business days.'
       },
@@ -189,6 +196,12 @@
         'contact.form.submit': 'Enviar mensaje',
         'contact.form.note': 'Al enviar este formulario, aceptas que el equipo de FloraBal se comunique contigo.',
         'contact.form.success': '¡Gracias! Tu mensaje quedó listo. Revísalo y envíalo desde tu app de correo.',
+        'contact.form.subject': 'Contacto FloraBal',
+        'contact.form.label.name': 'Nombre',
+        'contact.form.label.email': 'Correo',
+        'contact.form.label.company': 'Organización',
+        'contact.form.label.message': 'Mensaje',
+        'contact.form.openDraft': 'Abrir borrador de correo',
         'footer.heading': '¡Gracias por escribirnos!',
         'footer.subtext': 'Normalmente respondemos dentro de 2 días hábiles.'
       }
@@ -208,6 +221,7 @@
     const mobileMenuLinks = document.querySelectorAll('.nav-links a');
     const contactForm = document.querySelector('.contact-form');
     const formFeedback = document.querySelector('[data-form-feedback]');
+    const mailtoLink = document.querySelector('[data-mailto-link]');
 
     function applyLanguage(language) {
       const selectedLanguage = translations[language] ? language : 'en';
@@ -235,6 +249,10 @@
 
       if (formFeedback) {
         formFeedback.textContent = '';
+      }
+
+      if (mailtoLink) {
+        mailtoLink.textContent = languageMap['contact.form.openDraft'];
       }
     }
 
@@ -326,13 +344,13 @@
       const email = contactForm.elements.namedItem('email')?.value?.trim() || '';
       const company = contactForm.elements.namedItem('company')?.value?.trim() || '';
       const message = contactForm.elements.namedItem('message')?.value?.trim() || '';
-      const mailSubject = name ? `FloraBal Contact - ${name}` : 'FloraBal Contact Form';
+      const mailSubject = name ? `${languageMap['contact.form.subject']} - ${name}` : languageMap['contact.form.subject'];
       const mailBody = [
-        `Name: ${name || '-'}`,
-        `Email: ${email || '-'}`,
-        `Organization: ${company || '-'}`,
+        `${languageMap['contact.form.label.name']}: ${name || '-'}`,
+        `${languageMap['contact.form.label.email']}: ${email || '-'}`,
+        `${languageMap['contact.form.label.company']}: ${company || '-'}`,
         '',
-        'Message:',
+        `${languageMap['contact.form.label.message']}:`,
         message || '-'
       ].join('\n');
       const mailQuery = new URLSearchParams({ subject: mailSubject, body: mailBody }).toString();
@@ -341,8 +359,11 @@
         formFeedback.textContent = languageMap['contact.form.success'];
       }
 
-      contactForm.reset();
-      window.location.href = `mailto:hello@florabal.com?${mailQuery}`;
+      if (mailtoLink) {
+        mailtoLink.href = `mailto:hello@florabal.com?${mailQuery}`;
+        mailtoLink.hidden = false;
+        mailtoLink.focus();
+      }
     });
 
     document.addEventListener('click', closeAllMenus);

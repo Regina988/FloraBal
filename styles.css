@@ -1518,6 +1518,24 @@ html[lang="es"] .btn-contact {
   color: var(--purple);
 }
 
+.contact-mailto-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  min-height: 44px;
+  border-radius: 999px;
+  padding: 10px 18px;
+  background: var(--lilac);
+  color: var(--dark-purple);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.contact-mailto-link[hidden] {
+  display: none;
+}
+
 .contact-footer {
   margin-top: 20px;
 }
