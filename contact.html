@@ -9,30 +9,50 @@
 </head>
 <body class="contact-page">
 
-  <!-- PILL HEADER -->
-  <header class="pill-header">
-    <nav class="pill-nav">
-      <a href="index.html" class="pill-nav__logo">
-        <span class="pill-nav__logo-icon">&#x1F33F;</span>
-        <span class="pill-nav__logo-text">FloraBal</span>
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <nav class="navbar">
+      <!--
+        LOGO: To replace with your own logo image:
+        1. Save your logo as "assets/logo.png" (recommended ~174x44px, transparent PNG)
+        2. Replace the <img> src below with "assets/logo.png"
+        3. Remove the "logo-img-crop" class and add "logo-img-custom" instead
+      -->
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-crop">
+          <!-- IMAGE: Header logo — replace src with "assets/logo.png" and remove the crop wrapper -->
+          <img src="https://www.figma.com/api/mcp/asset/7f78518b-f1ac-4896-90ff-1c907b80309f" alt="FloraBal Logo" class="logo-img-crop">
+        </div>
       </a>
-      <ul class="pill-nav__links">
-        <li><a href="about.html"><span data-lang-es>Nosotros</span><span data-lang-en>Who we are</span></a></li>
-        <li><a href="how-it-works.html"><span data-lang-es>Cómo Funciona</span><span data-lang-en>How it works</span></a></li>
-        <li><a href="contact.html" class="is-active"><span data-lang-es>Contacto</span><span data-lang-en>Contact</span></a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-      <div class="pill-lang">
-        <span class="pill-lang__flag" aria-hidden="true">&#x1F1EC;&#x1F1E7;</span>
-        <span class="pill-lang__text"><span data-lang-es>Español</span><span data-lang-en>English</span></span>
-        <span class="pill-lang__caret" aria-hidden="true">&#x25BE;</span>
-        <div class="pill-lang__menu">
-          <button class="lang-btn active" data-lang="es">ES</button>
-          <button class="lang-btn" data-lang="en">EN</button>
+      <button type="button" class="menu-toggle" data-menu-toggle aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-actions" id="primary-navigation" data-mobile-drawer>
+        <ul class="nav-links">
+          <li><a href="wip.html" data-i18n="nav.whoWeAre">Who we are</a></li>
+          <li><a href="wip.html" data-i18n="nav.howItWorks">How it works</a></li>
+          <li><a href="contact.html" class="active" data-i18n="nav.contact">Contact</a></li>
+          <li><a href="wip.html" data-i18n="nav.blog">Blog</a></li>
+        </ul>
+        <div class="lang-selector" data-lang-selector>
+          <button class="lang-selector-trigger" type="button" data-lang-trigger aria-haspopup="listbox" aria-expanded="false" aria-label="Change language">
+            <img src="" alt="UK flag" class="lang-flag" data-lang-current-flag>
+            <span class="lang-text" data-i18n="lang.current">English</span>
+            <svg class="lang-caret" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="lang-menu" role="listbox" aria-label="Language options">
+            <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="en"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="UK flag" class="lang-flag" data-lang-option-flag data-lang-flag="en"><span class="lang-option-label">English</span></button></li>
+            <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="es"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Bandera de España" class="lang-flag" data-lang-option-flag data-lang-flag="es"><span class="lang-option-label">Español</span></button></li>
+          </ul>
         </div>
       </div>
     </nav>
   </header>
+  <div class="mobile-nav-overlay" data-mobile-overlay></div>
 
   <!-- HERO -->
   <section class="contact-hero">
@@ -57,13 +77,9 @@
     <div class="contact-form-card">
       <header class="contact-form-card__heading">
         <h2>
-          <span data-lang-es>Conectemos constelaciones</span>
-          <span data-lang-en>Let's connect constellations</span>
+          <span data-lang-es>¡Conectemos!</span>
+          <span data-lang-en>Let&rsquo;s connect!</span>
         </h2>
-        <p>
-          <span data-lang-es>¡Alineemos nuestras constelaciones! Escríbenos y que la magia de la colaboración ilumine nuestros cielos.</span>
-          <span data-lang-en>Let's align our constellations! Reach out and let the magic of collaboration illuminate our skies.</span>
-        </p>
       </header>
 
       <form class="contact-form-v2" id="contact-form">
@@ -147,9 +163,9 @@
         <span>&#x1F33F;</span>
       </a>
       <ul class="pill-footer-nav__links">
-        <li><a href="about.html" class="is-active"><span data-lang-es>Nosotros</span><span data-lang-en>Who we are</span></a></li>
+        <li><a href="about.html"><span data-lang-es>Nosotros</span><span data-lang-en>Who we are</span></a></li>
         <li><a href="how-it-works.html"><span data-lang-es>Cómo Funciona</span><span data-lang-en>How it works</span></a></li>
-        <li><a href="contact.html"><span data-lang-es>Contacto</span><span data-lang-en>Contact</span></a></li>
+        <li><a href="contact.html" class="is-active"><span data-lang-es>Contacto</span><span data-lang-en>Contact</span></a></li>
         <li><a href="blog.html">Blog</a></li>
       </ul>
       <div class="pill-footer-nav__lang">
