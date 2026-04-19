@@ -3,480 +3,199 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FloraBal - FemTech Vaginal Health Diagnostics</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>FloraBal - Coming Soon</title>
+  <link href="assets/logocorto.png" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #34026f;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .wip-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
+
+    .bottom-nav-logo {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .bottom-nav-logo-crop {
+      width: 79px;
+      height: 66px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bottom-logo-img-crop {
+      position: absolute;
+      width: 815.18%;
+      max-width: none;
+      left: -470.16%;
+      top: -55.4%;
+    }
+    .lang-selector {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 202px;
+      z-index: 5;
+    }
+    .lang-selector-trigger {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      border: 1px solid #fff;
+      border-radius: 50px;
+      padding: 12px 20px;
+      height: 56px;
+      cursor: pointer;
+      background: #34026f;
+      color: #fff;
+      font: inherit;
+    }
+    .lang-flag { width: 36px; height: 24px; border-radius: 5px; object-fit: cover; }
+    .lang-text { font-size: 18px; flex: 1; text-align: center; white-space: nowrap; }
+    .lang-caret { width: 20px; height: 20px; transition: transform 0.2s ease; }
+    .lang-selector.is-open .lang-caret { transform: rotate(180deg); }
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      border: 1px solid #fff;
+      border-radius: 18px;
+      background: #34026f;
+      padding: 8px;
+      list-style: none;
+      display: none;
+    }
+    .lang-selector.is-open .lang-menu { display: block; }
+    .lang-option {
+      width: 100%;
+      border: none;
+      background: transparent;
+      border-radius: 12px;
+      padding: 8px 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      color: #fff;
+      font: inherit;
+    }
+    .lang-option:hover, .lang-option:focus-visible { background: rgba(255, 255, 255, 0.16); outline: none; }
+    .lang-option-label { font-size: 16px; line-height: 1.2; }
+    h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(40px, 8vw, 90px);
+      letter-spacing: -1.8px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+    h1 span { color: #E9CDFD; }
+    p {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 30px;
+      opacity: 0.8;
+      max-width: 500px;
+      margin-bottom: 40px;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 40px;
+      border-radius: 50px;
+      background: #F7F1FF;
+      color: #000;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .back-btn:hover { opacity: 0.85; }
+    .badge {
+      display: inline-block;
+      background: rgba(112, 23, 210, 0.41);
+      border-radius: 12px;
+      padding: 12px 30px;
+      margin-bottom: 40px;
+    }
+    .badge span {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    html[lang="es"] h1 { letter-spacing: -1px; line-height: 1.08; }
+    html[lang="es"] p { line-height: 1.45; }
+    @media (max-width: 768px) {
+      .lang-selector { top: 16px; right: 16px; width: 190px; }
+      .lang-selector-trigger { padding: 10px 14px; height: 52px; }
+      .lang-text { font-size: 16px; }
+    }
+  </style>
 </head>
 <body>
-  <!-- =====================================================
-       HOW TO REPLACE IMAGES:
-       1. Put your image files in the "assets/" folder
-       2. Find the <img> tag you want to change
-       3. Replace the src="..." value with "assets/your-file-name.jpg"
+  <div class="lang-selector" data-lang-selector>
+    <button class="lang-selector-trigger" type="button" data-lang-trigger aria-haspopup="listbox" aria-expanded="false" aria-label="Change language">
+      <img src="" alt="UK flag" class="lang-flag" data-lang-current-flag>
+      <span class="lang-text" data-i18n="lang.current">English</span>
+      <svg class="lang-caret" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <ul class="lang-menu" role="listbox" aria-label="Language options">
+      <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="en"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="UK flag" class="lang-flag" data-lang-option-flag data-lang-flag="en"><span class="lang-option-label">English</span></button></li>
+      <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="es"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Bandera de España" class="lang-flag" data-lang-option-flag data-lang-flag="es"><span class="lang-option-label">Español</span></button></li>
+    </ul>
+  </div>
 
-       Example:
-         BEFORE: src="https://www.figma.com/api/mcp/asset/..."
-         AFTER:  src="assets/hero-photo.jpg"
-
-       All replaceable images are marked with "IMAGE:" comments below.
-       ====================================================== -->
-
-  <!-- ===== Header ===== -->
-  <header class="header">
-    <nav class="navbar">
-      <!--
-        LOGO: To replace with your own logo image:
-        1. Save your logo as "assets/logo.png" (recommended ~174x44px, transparent PNG)
-        2. Replace the <img> src below with "assets/logo.png"
-        3. Remove the "logo-img-crop" class and add "logo-img-custom" instead
-      -->
-      <a href="index.html" class="nav-logo">
-        <div class="nav-logo-crop">
-          <!-- IMAGE: Header logo — replace src with "assets/logo.png" and remove the crop wrapper -->
-          <img src="https://www.figma.com/api/mcp/asset/7f78518b-f1ac-4896-90ff-1c907b80309f" alt="FloraBal Logo" class="logo-img-crop">
-        </div>
-      </a>
-      <button type="button" class="menu-toggle" data-menu-toggle aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="nav-actions" id="primary-navigation" data-mobile-drawer>
-        <ul class="nav-links">
-          <li><a href="wip.html" data-i18n="nav.whoWeAre">Who we are</a></li>
-          <li><a href="wip.html" data-i18n="nav.howItWorks">How it works</a></li>
-          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
-          <li><a href="wip.html" data-i18n="nav.blog">Blog</a></li>
-        </ul>
-        <div class="lang-selector" data-lang-selector>
-          <button class="lang-selector-trigger" type="button" data-lang-trigger aria-haspopup="listbox" aria-expanded="false" aria-label="Change language">
-            <img src="" alt="UK flag" class="lang-flag" data-lang-current-flag>
-            <span class="lang-text" data-i18n="lang.current">English</span>
-            <svg class="lang-caret" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <ul class="lang-menu" role="listbox" aria-label="Language options">
-            <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="en"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="UK flag" class="lang-flag" data-lang-option-flag data-lang-flag="en"><span class="lang-option-label">English</span></button></li>
-            <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="es"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Bandera de España" class="lang-flag" data-lang-option-flag data-lang-flag="es"><span class="lang-option-label">Español</span></button></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <div class="mobile-nav-overlay" data-mobile-overlay></div>
-
-  <!-- ===== Hero Section ===== -->
-  <section class="hero">
-    <div class="hero-image-wrapper">
-      <!-- IMAGE: Hero background photo — replace src with "assets/hero.jpg" (recommended ~1400x900px) -->
-      <img src="https://www.figma.com/api/mcp/asset/e7e63121-757c-4fe5-afcf-4523e0bb8a30" alt="FloraBal team" class="hero-image">
-      <div class="hero-overlay"></div>
-      <div class="hero-title-wrapper">
-        <h1 class="hero-title" data-text="FLORABAL">FLORABAL</h1>
-      </div>
+  <a href="index.html" class="wip-logo bottom-nav-logo" aria-label="FloraBal Home">
+    <div class="bottom-nav-logo-crop">
+      <img src="https://www.figma.com/api/mcp/asset/dd02a08c-ef44-49fe-b847-50de80b6694a" alt="FloraBal" class="bottom-logo-img-crop">
     </div>
-  </section>
+  </a>
 
-  <!-- ===== What is FloraBal ===== -->
-  <section id="who-we-are" class="what-is">
-    <div class="what-is-inner">
-      <div class="what-is-image">
-        <!-- IMAGE: "What is FloraBal" section photo — replace src with "assets/what-is.jpg" (recommended ~510x451px) -->
-        <img src="assets/ProductExample.png" alt="Woman with FloraBal">
-      </div>
-      <div class="what-is-content">
-        <h2 class="section-heading">
-          <span class="text-white" data-i18n="whatIs.headingPrefix">WHAT IS</span>
-          <span class="text-lilac" data-i18n="whatIs.headingBrand"> FLORABAL</span><span class="text-white" data-i18n="whatIs.headingSuffix">?</span>
-        </h2>
-        <p class="what-is-text" data-i18n="whatIs.paragraph1">
-          FloraBal is a rapid vaginal health diagnostic kit designed to detect infections quickly, easily, and without the need for a laboratory or clinical visit. It belongs to a new generation of FemTech solutions with the objective of making women's healthcare more accessible, private and user-friendly.
-        </p>
-        <p class="what-is-text" data-i18n="whatIs.paragraph2">
-          Using advanced biomarker detection technology, FloraBal delivers reliable results in minutes, helping users make informed decisions about their health.
-        </p>
-        <div class="what-is-buttons">
-          <a href="wip.html" class="btn btn-light" data-i18n="buttons.howItWorks">How it works</a>
-          <a href="wip.html" class="btn btn-light" data-i18n="buttons.whoWeAre">Who we are</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="badge"><span data-i18n="wip.badge">Work in Progress</span></div>
 
-  <!-- ===== The Problem ===== -->
-  <section class="problem">
-    <div class="problem-inner">
-      <h2 class="section-heading problem-heading">
-        <span data-i18n="problem.headingPrefix">THE </span><span class="text-purple" data-i18n="problem.headingMain">PROBLEM</span>
-      </h2>
-      <div class="problem-content">
-        <div class="problem-left">
-          <!-- IMAGE: Mexico map illustration — replace src with "assets/mexico-map.png" (recommended ~520x326px, transparent PNG) -->
-          <img src="https://www.figma.com/api/mcp/asset/177a21dd-252e-421a-aa56-15794533fb72" alt="Mexico map" class="mexico-map">
-        </div>
-        <div class="problem-right">
-          <div class="problem-description">
-            <div class="problem-border"></div>
-            <div class="problem-text-area">
-              <p class="problem-intro" data-i18n="problem.intro">Vaginal infections affect millions of women in Mexico each year, yet the default response is self-medication, not diagnosis.</p>
-              <div class="problem-cards">
-                <div class="problem-card">
-                  <div class="problem-card-icon icon-clock">
-                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                      <path d="M14 4.667C8.845 4.667 4.667 8.845 4.667 14S8.845 23.333 14 23.333 23.333 19.155 23.333 14 19.155 4.667 14 4.667zm0 16.333A7 7 0 1114 7a7 7 0 010 14zm.583-11.083h-1.75v4.666l4.084 2.45.875-1.433-3.209-1.9V9.917z" fill="#34026f"/>
-                    </svg>
-                  </div>
-                  <h4 data-i18n="problem.card1.title">Delayed care</h4>
-                  <p data-i18n="problem.card1.text">Women wait too long or never seek a proper diagnosis.</p>
-                </div>
-                <div class="problem-card">
-                  <div class="problem-card-icon icon-pill">
-                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                      <rect x="4" y="4" width="20" height="20" rx="4" fill="#E9CDFD"/>
-                      <path d="M9 14h10M14 9v10" stroke="#34026f" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                  </div>
-                  <h4 data-i18n="problem.card2.title">Self-medication</h4>
-                  <p data-i18n="problem.card2.text">Symptoms treated without identifying the actual cause.</p>
-                </div>
-                <div class="problem-card">
-                  <div class="problem-card-icon icon-alert">
-                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                      <path d="M14 4.667C8.845 4.667 4.667 8.845 4.667 14S8.845 23.333 14 23.333 23.333 19.155 23.333 14 19.155 4.667 14 4.667zm0 16.333A7 7 0 1114 7a7 7 0 010 14zm-.583-3.5h1.166v1.167h-1.166V17.5zm0-7h1.166v5.833h-1.166V10.5z" fill="#34026f"/>
-                    </svg>
-                  </div>
-                  <h4 data-i18n="problem.card3.title">Wrong treatment</h4>
-                  <p data-i18n="problem.card3.text">Misdiagnosis leads to recurring infections and complications.</p>
-                </div>
-              </div>
-              <div class="problem-callout">
-                <p data-i18n="problem.callout">This cycle drives up complications, including elevated STI risk and pregnancy issues while adding costs that could be avoided with a timely, accurate diagnosis.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <h1><span data-i18n="wip.coming">COMING</span> <span data-i18n="wip.soon">SOON</span></h1>
+  <p data-i18n="wip.description">This page is currently under construction. We're working hard to bring you something amazing.</p>
 
-  <!-- ===== Our Solution ===== -->
-  <section id="how-it-works" class="solution">
-    <div class="solution-inner">
-      <div class="solution-left">
-        <h2 class="section-heading">
-          <span class="text-white" data-i18n="solution.headingPrefix">OUR </span><span class="text-lilac" data-i18n="solution.headingMain">SOLUTION</span>
-        </h2>
-        <div class="solution-badges">
-          <div class="badge">
-            <span class="badge-value" data-i18n="solution.badge1.value">15 min</span>
-            <span class="badge-label" data-i18n="solution.badge1.label">RESULTS</span>
-          </div>
-          <div class="badge">
-            <span class="badge-value" data-i18n="solution.badge2.value">No lab</span>
-            <span class="badge-label" data-i18n="solution.badge2.label">NEEDED</span>
-          </div>
-                    <div class="badge">
-                                <span class="badge-value" data-i18n="solution.badge3.value">Self-use</span>
-                                            <span class="badge-label" data-i18n="solution.badge3.label">AT HOME</span>
-                                                      </div>
-                                                              </div>
-                                                                      <p class="solution-text" data-i18n-html="solution.paragraph1">
-                                                                                FloraBal uses a <strong>lateral flow immunoassay,</strong> the same technology behind pregnancy tests, to detect biomarkers like sialidase, an enzyme linked to bacterial vaginosis.
-        </p>
-        <p class="solution-text" data-i18n="solution.paragraph2">
-          Designed for self-sampling, it delivers accurate results in ~15 minutes with no laboratory processing required. Biochemical precision, built for everyday use.
-        </p>
-        <a href="wip.html" class="btn btn-light" data-i18n="buttons.learnMore">Learn more</a>
-      </div>
-      <div class="solution-right">
-        <!-- IMAGE: Solution section photo — replace src with "assets/solution.jpg" (recommended ~510x451px) -->
-        <img src="assets/SciencePhoto2.jpeg" alt="FloraBal product" class="solution-image">
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Why FloraBal ===== -->
-  <section class="why-florabal">
-    <div class="why-inner">
-      <h2 class="section-heading why-heading">
-        <span data-i18n="why.headingPrefix">WHY </span><span class="text-purple" data-i18n="why.headingBrand">FLORABAL</span><span data-i18n="why.headingSuffix">?</span>
-      </h2>
-      <p class="why-subtitle" data-i18n="why.subtitle">A solution built from ground up for the women who need it most. Fast, accurate, and designed for real life</p>
-      <div class="why-cards">
-        <div class="why-card">
-          <div class="why-card-icon">
-            <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-              <path d="M26 8c-7.2 0-13 5.8-13 13 0 6.4 4.6 11.8 10.8 12.8V39h-4.2a2 2 0 100 4h4.2v3a2 2 0 104 0v-3H32a2 2 0 100-4h-4.2v-5.2C34.4 32.8 39 27.4 39 21c0-7.2-5.8-13-13-13zm0 4c5 0 9 4 9 9s-4 9-9 9-9-4-9-9 4-9 9-9z" fill="#34026f"/>
-            </svg>
-          </div>
-          <h3 data-i18n="why.card1.title">100% women-led team</h3>
-          <p data-i18n="why.card1.text">Built by women in biotech and health innovation with firsthand understanding of the problem we're solving</p>
-        </div>
-        <div class="why-card">
-          <div class="why-card-icon">
-            <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-              <path d="M26 8C16.06 8 8 16.06 8 26s8.06 18 18 18 18-8.06 18-18S35.94 8 26 8zm0 32c-7.73 0-14-6.27-14-14s6.27-14 14-14 14 6.27 14 14-6.27 14-14 14zm1-22h-3v9.2l7.2 4.3 1.5-2.5-5.7-3.3V18z" fill="#34026f"/>
-            </svg>
-          </div>
-          <h3 data-i18n="why.card2.title">Fast, affordable & accessible</h3>
-          <p data-i18n="why.card2.text">Results in 15 minutes at a fraction of the cost. No clinic visit, no lab, no waiting days for answers.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-card-icon">
-            <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-              <path d="M26 6C14.95 6 6 14.95 6 26s8.95 20 20 20 20-8.95 20-20S37.05 6 26 6zm0 36c-8.84 0-16-7.16-16-16S17.16 10 26 10s16 7.16 16 16-7.16 16-16 16zm-1.7-7.8l-7.4-7.4 2.8-2.8 4.6 4.6 8.2-8.2 2.8 2.8-11 11z" fill="#34026f"/>
-            </svg>
-          </div>
-          <h3 data-i18n="why.card3.title">Designed for real-world impact</h3>
-          <p data-i18n="why.card3.text">Targeted at underserved and high-need communities where access to traditional diagnostics is limited</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Testimonies & Partners ===== -->
-  <!--
-  <section class="testimonies">
-    <div class="testimonies-inner">
-      <h2 class="section-heading testimonies-heading">
-        <span data-i18n="testimonies.headingPrefix">TESTIMONIES & </span><span class="text-purple" data-i18n="testimonies.headingMain">PARTNERS</span>
-      </h2>
-      <div class="testimonial-cards">
-        <div class="testimonial-card">
-          <div class="testimonial-header">
-            [IMAGE: Testimonial avatar 1 — replace src with "assets/avatar-1.jpg" (recommended 70x70px, square)]
-            <img src="https://www.figma.com/api/mcp/asset/9bbbc492-7c27-498e-abf9-5b3d4dbd0f7d" alt="Avatar" class="testimonial-avatar">
-            <div class="testimonial-info">
-              <h4 data-i18n="testimonies.card1.name">Lorem ipsum</h4>
-              <p data-i18n="testimonies.card1.role">Lorem ipsum dolor sit amet</p>
-            </div>
-          </div>
-          <div class="testimonial-quote-icon">
-            [IMAGE: Quote icon — replace src with "assets/quote-icon.png" if desired]
-            <img src="https://www.figma.com/api/mcp/asset/a709aac0-23e5-418b-82ff-71d4adf0f937" alt="Quote">
-          </div>
-          <p class="testimonial-text" data-i18n="testimonies.card1.quote">"Lorem ipsum dolor sit amet consectetur adipiscing, elit morbi imperdiet, Lorem ipsum dolor sit amet consectetur adipiscing, elit morbi imperdiet"</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-header">
-            [IMAGE: Testimonial avatar 2 — replace src with "assets/avatar-2.jpg" (recommended 70x70px, square)]
-            <img src="https://www.figma.com/api/mcp/asset/9bbbc492-7c27-498e-abf9-5b3d4dbd0f7d" alt="Avatar" class="testimonial-avatar">
-            <div class="testimonial-info">
-              <h4 data-i18n="testimonies.card2.name">Lorem ipsum</h4>
-              <p data-i18n="testimonies.card2.role">Lorem ipsum dolor sit amet</p>
-            </div>
-          </div>
-          <div class="testimonial-quote-icon">
-            <img src="https://www.figma.com/api/mcp/asset/a709aac0-23e5-418b-82ff-71d4adf0f937" alt="Quote">
-          </div>
-          <p class="testimonial-text" data-i18n="testimonies.card2.quote">"Lorem ipsum dolor sit amet consectetur adipiscing, elit morbi imperdiet, Lorem ipsum dolor sit amet consectetur adipiscing, elit morbi imperdiet"</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-header">
-            [IMAGE: Testimonial avatar 3 — replace src with "assets/avatar-3.jpg" (recommended 70x70px, square)]
-            <img src="https://www.figma.com/api/mcp/asset/9bbbc492-7c27-498e-abf9-5b3d4dbd0f7d" alt="Avatar" class="testimonial-avatar">
-            <div class="testimonial-info">
-              <h4 data-i18n="testimonies.card3.name">Lorem ipsum</h4>
-              <p data-i18n="testimonies.card3.role">Lorem ipsum dolor sit amet</p>
-            </div>
-          </div>
-          <div class="testimonial-quote-icon">
-            <img src="https://www.figma.com/api/mcp/asset/a709aac0-23e5-418b-82ff-71d4adf0f937" alt="Quote">
-          </div>
-          <p class="testimonial-text" data-i18n="testimonies.card3.quote">"Lorem ipsum dolor sit amet consectetur adipiscing, elit morbi imperdiet, Lorem ipsum dolor sit amet consectetur adipiscing, elit morbi imperdiet"</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  -->
-
-  <!-- ===== Footer / Contact Section ===== -->
-  <!--
-    Footer layout: Dark purple flat background covers the full area.
-    A large white ellipse sits on top half, creating a crescent-moon transition.
-    Text + button sit on the white ellipse area, social icons on the purple area.
-  -->
-  <footer class="footer-section">
-    <!-- White ellipse crescent overlapping the top -->
-    <div class="footer-white-ellipse"></div>
-    <!-- Content on top of everything -->
-    <div class="footer-content">
-      <div class="footer-top-content">
-        <h2 class="footer-heading" data-i18n="footer.heading">Interested? Contact Us!</h2>
-        <p class="footer-subtext" data-i18n="footer.subtext">Florabal. FemTech. Intimate Health.</p>
-      </div>
-      <div class="footer-bottom-content">
-        <a href="contact.html" class="btn-contact" data-i18n="buttons.contactUs">Contact Us</a>
-        <div class="social-icons">
-          <!-- IMAGE: Social icon — Facebook. Replace src with "assets/facebook.png" -->
-          <a href="wip.html" class="social-link" aria-label="Facebook">
-            <img src="https://www.figma.com/api/mcp/asset/e11e60f7-cea5-4b89-84c3-7c060d183990" alt="Facebook">
-          </a>
-          <!-- IMAGE: Social icon — Instagram. Replace src with "assets/instagram.png" -->
-          <a href="wip.html" class="social-link" aria-label="Instagram">
-            <img src="https://www.figma.com/api/mcp/asset/6de7e89c-67b3-40a7-8d57-e73ece543006" alt="Instagram">
-          </a>
-          <!-- IMAGE: Social icon — LinkedIn. Replace src with "assets/linkedin.png" -->
-          <a href="wip.html" class="social-link" aria-label="LinkedIn">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M5.3 8.6a1.9 1.9 0 1 1 0-3.8 1.9 1.9 0 0 1 0 3.8ZM3.8 20V9.8h3V20h-3Zm4.9 0V9.8h2.9v1.4h.1c.4-.8 1.4-1.6 2.8-1.6 3 0 3.5 2 3.5 4.5V20h-3v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V20h-2.9Z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== Bottom Nav (inside footer so it sits on the purple bg) ===== -->
-    <nav class="bottom-nav">
-      <div class="bottom-nav-inner">
-        <!-- IMAGE: Bottom nav logo (flower icon only) — replace src with "assets/logo-icon.png" -->
-        <a href="index.html" class="bottom-nav-logo">
-          <div class="bottom-nav-logo-crop">
-            <img src="assets/logocorto.png" alt="FloraBal" class="bottom-logo-img-crop">
-          </div>
-        </a>
-        <ul class="bottom-nav-links">
-          <li><a href="wip.html" data-i18n="nav.whoWeAre">Who we are</a></li>
-          <li><a href="wip.html" data-i18n="nav.howItWorks">How it works</a></li>
-          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
-          <li><a href="wip.html" data-i18n="nav.blog">Blog</a></li>
-        </ul>
-        <div class="lang-selector lang-selector-dark" data-lang-selector>
-          <button class="lang-selector-trigger" type="button" data-lang-trigger aria-haspopup="listbox" aria-expanded="false" aria-label="Change language">
-            <img src="" alt="UK flag" class="lang-flag" data-lang-current-flag>
-            <span class="lang-text" data-i18n="lang.current">English</span>
-            <svg class="lang-caret" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <ul class="lang-menu" role="listbox" aria-label="Language options">
-            <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="en"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="UK flag" class="lang-flag" data-lang-option-flag data-lang-flag="en"><span class="lang-option-label">English</span></button></li>
-            <li><button type="button" class="lang-option" role="option" data-lang-option data-lang="es"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Bandera de España" class="lang-flag" data-lang-option-flag data-lang-flag="es"><span class="lang-option-label">Español</span></button></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </footer>
+  <a href="index.html" class="back-btn" data-i18n="wip.backHome">Back to Home</a>
   <script>
     const translations = {
       en: {
         'lang.current': 'English',
-        'nav.whoWeAre': 'Who we are',
-        'nav.howItWorks': 'How it works',
-        'nav.kitFloraBal': 'KitFloraBal',
-        'nav.blog': 'Blog',
-        'whatIs.headingPrefix': 'WHAT IS',
-        'whatIs.headingBrand': ' FLORABAL',
-        'whatIs.headingSuffix': '?',
-        'whatIs.paragraph1': "FloraBal is a rapid vaginal health diagnostic kit designed to detect infections quickly, easily, and without the need for a laboratory or clinical visit. It belongs to a new generation of FemTech solutions with the objective of making women's healthcare more accessible, private and user-friendly.",
-        'whatIs.paragraph2': 'Using advanced biomarker detection technology, FloraBal delivers reliable results in minutes, helping users make informed decisions about their health.',
-        'buttons.howItWorks': 'How it works',
-        'buttons.whoWeAre': 'Who we are',
-        'problem.headingPrefix': 'THE ',
-        'problem.headingMain': 'PROBLEM',
-        'problem.intro': 'Vaginal infections affect millions of women in Mexico each year, yet the default response is self-medication, not diagnosis.',
-        'problem.card1.title': 'Delayed care',
-        'problem.card1.text': 'Women wait too long or never seek a proper diagnosis.',
-        'problem.card2.title': 'Self-medication',
-        'problem.card2.text': 'Symptoms treated without identifying the actual cause.',
-        'problem.card3.title': 'Wrong treatment',
-        'problem.card3.text': 'Misdiagnosis leads to recurring infections and complications.',
-        'problem.callout': 'This cycle drives up complications, including elevated STI risk and pregnancy issues while adding costs that could be avoided with a timely, accurate diagnosis.',
-        'solution.headingPrefix': 'OUR ',
-        'solution.headingMain': 'SOLUTION',
-        'solution.badge1.value': '15 min',
-        'solution.badge1.label': 'RESULTS',
-        'solution.badge2.value': 'No lab',
-        'solution.badge2.label': 'NEEDED',
-        'solution.badge3.value': 'Self-use',
-        'solution.badge3.label': 'AT HOME',
-        'solution.paragraph1': 'FloraBal uses a <strong>lateral flow immunoassay,</strong> the same technology behind pregnancy tests, to detect biomarkers like sialidase, an enzyme linked to bacterial vaginosis.',
-        'solution.paragraph2': 'Designed for self-sampling, it delivers accurate results in ~15 minutes with no laboratory processing required. Biochemical precision, built for everyday use.',
-        'buttons.learnMore': 'Learn more',
-        'why.headingPrefix': 'WHY ',
-        'why.headingBrand': 'FLORABAL',
-        'why.headingSuffix': '?',
-        'why.subtitle': 'A solution built from ground up for the women who need it most. Fast, accurate, and designed for real life',
-        'why.card1.title': '100% women-led team',
-        'why.card1.text': "Built by women in biotech and health innovation with firsthand understanding of the problem we're solving",
-        'why.card2.title': 'Fast, affordable & accessible',
-        'why.card2.text': 'Results in 15 minutes at a fraction of the cost. No clinic visit, no lab, no waiting days for answers.',
-        'why.card3.title': 'Designed for real-world impact',
-        'why.card3.text': 'Targeted at underserved and high-need communities where access to traditional diagnostics is limited',
-        'testimonies.headingPrefix': 'TESTIMONIES & ',
-        'testimonies.headingMain': 'PARTNERS',
-        'testimonies.card1.name': 'Ana R.',
-        'testimonies.card1.role': 'Pilot user in Mexico',
-        'testimonies.card1.quote': '"I got clear results in minutes and avoided self-medicating again."',
-        'testimonies.card2.name': 'Dr. López',
-        'testimonies.card2.role': 'Community health ally',
-        'testimonies.card2.quote': '"Tools like FloraBal can reduce delays and improve treatment decisions."',
-        'testimonies.card3.name': 'Mariana P.',
-        'testimonies.card3.role': 'University student',
-        'testimonies.card3.quote': '"Private, easy to use, and much less stressful than waiting for lab appointments."',
-        'footer.heading': 'Interested? Contact Us!',
-        'footer.subtext': 'Florabal. FemTech. Intimate Health.',
-        'buttons.contactUs': 'Contact Us'
+        'wip.badge': 'Work in Progress',
+        'wip.coming': 'COMING',
+        'wip.soon': 'SOON',
+        'wip.description': "This page is currently under construction. We're working hard to bring you something amazing.",
+        'wip.backHome': 'Back to Home'
       },
       es: {
         'lang.current': 'Español',
-        'nav.whoWeAre': 'Quiénes somos',
-        'nav.howItWorks': 'Cómo funciona',
-        'nav.kitFloraBal': 'KitFloraBal',
-        'nav.blog': 'Blog',
-        'whatIs.headingPrefix': '¿QUÉ ES',
-        'whatIs.headingBrand': ' FLORABAL',
-        'whatIs.headingSuffix': '?',
-        'whatIs.paragraph1': 'FloraBal es un kit rápido de diagnóstico de salud vaginal diseñado para detectar infecciones de forma rápida, sencilla y sin necesidad de laboratorio ni visita clínica. Pertenece a una nueva generación de soluciones FemTech con el objetivo de hacer la salud de la mujer más accesible, privada y fácil de usar.',
-        'whatIs.paragraph2': 'Usando tecnología avanzada de detección de biomarcadores, FloraBal ofrece resultados confiables en minutos, ayudando a tomar decisiones informadas sobre la salud.',
-        'buttons.howItWorks': 'Cómo funciona',
-        'buttons.whoWeAre': 'Quiénes somos',
-        'problem.headingPrefix': 'EL ',
-        'problem.headingMain': 'PROBLEMA',
-        'problem.intro': 'Las infecciones vaginales afectan a millones de mujeres en México cada año, pero la respuesta por defecto suele ser la automedicación, no el diagnóstico.',
-        'problem.card1.title': 'Atención tardía',
-        'problem.card1.text': 'Las mujeres esperan demasiado o nunca buscan un diagnóstico adecuado.',
-        'problem.card2.title': 'Automedicación',
-        'problem.card2.text': 'Se tratan síntomas sin identificar la causa real.',
-        'problem.card3.title': 'Tratamiento incorrecto',
-        'problem.card3.text': 'Un mal diagnóstico provoca infecciones recurrentes y complicaciones.',
-        'problem.callout': 'Este ciclo aumenta las complicaciones, incluido un mayor riesgo de ITS y problemas en el embarazo, además de costos evitables con un diagnóstico oportuno y preciso.',
-        'solution.headingPrefix': 'NUESTRA ',
-        'solution.headingMain': 'SOLUCIÓN',
-        'solution.badge1.value': '15 min',
-        'solution.badge1.label': 'RESULTADOS',
-        'solution.badge2.value': 'Sin lab',
-        'solution.badge2.label': 'NECESARIO',
-        'solution.badge3.value': 'Autouso',
-        'solution.badge3.label': 'EN CASA',
-        'solution.paragraph1': 'FloraBal utiliza un <strong>inmunoensayo de flujo lateral,</strong> la misma tecnología de las pruebas de embarazo, para detectar biomarcadores como la sialidasa, una enzima asociada a la vaginosis bacteriana.',
-        'solution.paragraph2': 'Diseñado para autotoma, entrega resultados precisos en ~15 minutos sin procesamiento de laboratorio. Precisión bioquímica, pensada para el día a día.',
-        'buttons.learnMore': 'Conoce más',
-        'why.headingPrefix': '¿POR QUÉ ',
-        'why.headingBrand': 'FLORABAL',
-        'why.headingSuffix': '?',
-        'why.subtitle': 'Una solución creada desde cero para las mujeres que más la necesitan. Rápida, precisa y diseñada para la vida real.',
-        'why.card1.title': 'Equipo 100% liderado por mujeres',
-        'why.card1.text': 'Creado por mujeres en biotecnología e innovación en salud con comprensión directa del problema que resolvemos.',
-        'why.card2.title': 'Rápido, accesible y asequible',
-        'why.card2.text': 'Resultados en 15 minutos por una fracción del costo. Sin clínica, sin laboratorio, sin esperar días por respuestas.',
-        'why.card3.title': 'Diseñado para impacto real',
-        'why.card3.text': 'Enfocado en comunidades con alta necesidad y poco acceso a diagnósticos tradicionales.',
-        'testimonies.headingPrefix': 'TESTIMONIOS Y ',
-        'testimonies.headingMain': 'ALIADOS',
-        'testimonies.card1.name': 'Ana R.',
-        'testimonies.card1.role': 'Usuaria piloto en México',
-        'testimonies.card1.quote': '"Obtuve resultados claros en minutos y dejé de automedicarme."',
-        'testimonies.card2.name': 'Dra. López',
-        'testimonies.card2.role': 'Aliada de salud comunitaria',
-        'testimonies.card2.quote': '"Herramientas como FloraBal pueden reducir retrasos y mejorar decisiones de tratamiento."',
-        'testimonies.card3.name': 'Mariana P.',
-        'testimonies.card3.role': 'Estudiante universitaria',
-        'testimonies.card3.quote': '"Privado, fácil de usar y mucho menos estresante que esperar citas de laboratorio."',
-        'footer.heading': '¿Interesada? ¡Contáctanos!',
-        'footer.subtext': 'Florabal. FemTech. Salud íntima.',
-        'buttons.contactUs': 'Contáctanos'
+        'wip.badge': 'Trabajo en Progreso',
+        'wip.coming': 'PRÓXIMAMENTE',
+        'wip.soon': '',
+        'wip.description': 'Esta página está en construcción. Estamos trabajando para traerte algo increíble muy pronto.',
+        'wip.backHome': 'Volver al inicio'
       }
     };
 
@@ -488,29 +207,18 @@
     const selectorElements = document.querySelectorAll('[data-lang-selector]');
     const optionFlagElements = document.querySelectorAll('[data-lang-option-flag]');
     const storageKey = 'florabal-language';
-    const menuToggle = document.querySelector('[data-menu-toggle]');
-    const mobileDrawer = document.querySelector('[data-mobile-drawer]');
-    const mobileOverlay = document.querySelector('[data-mobile-overlay]');
-    const mobileMenuLinks = document.querySelectorAll('.nav-links a');
-    const heroTitle = document.querySelector('.hero-title');
 
     function applyLanguage(language) {
       const selectedLanguage = translations[language] ? language : 'en';
       const languageMap = translations[selectedLanguage];
 
       document.documentElement.lang = selectedLanguage;
+      document.title = selectedLanguage === 'es' ? 'FloraBal - Próximamente' : 'FloraBal - Coming Soon';
 
       document.querySelectorAll('[data-i18n]').forEach((element) => {
         const key = element.getAttribute('data-i18n');
-        if (languageMap[key]) {
+        if (languageMap[key] !== undefined) {
           element.textContent = languageMap[key];
-        }
-      });
-
-      document.querySelectorAll('[data-i18n-html]').forEach((element) => {
-        const key = element.getAttribute('data-i18n-html');
-        if (languageMap[key]) {
-          element.innerHTML = languageMap[key];
         }
       });
 
@@ -544,26 +252,6 @@
       });
     }
 
-    function closeMobileNavigation() {
-      document.body.classList.remove('nav-open');
-      if (menuToggle) {
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.setAttribute('aria-label', 'Open navigation menu');
-      }
-    }
-
-    function toggleMobileNavigation() {
-      const willOpen = !document.body.classList.contains('nav-open');
-      document.body.classList.toggle('nav-open', willOpen);
-      if (menuToggle) {
-        menuToggle.setAttribute('aria-expanded', String(willOpen));
-        menuToggle.setAttribute('aria-label', willOpen ? 'Close navigation menu' : 'Open navigation menu');
-      }
-      if (!willOpen) {
-        closeAllMenus();
-      }
-    }
-
     selectorElements.forEach((selector) => {
       const trigger = selector.querySelector('[data-lang-trigger]');
       const options = selector.querySelectorAll('[data-lang-option]');
@@ -591,49 +279,12 @@
       });
     });
 
-    menuToggle?.addEventListener('click', (event) => {
-      event.stopPropagation();
-      toggleMobileNavigation();
-    });
-
-    mobileDrawer?.addEventListener('click', (event) => {
-      event.stopPropagation();
-    });
-
-    mobileOverlay?.addEventListener('click', closeMobileNavigation);
-
-    mobileMenuLinks.forEach((link) => {
-      link.addEventListener('click', closeMobileNavigation);
-    });
-
     document.addEventListener('click', closeAllMenus);
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') {
-        closeMobileNavigation();
         closeAllMenus();
       }
     });
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {
-        closeMobileNavigation();
-      }
-    });
-
-    if (heroTitle) {
-      heroTitle.addEventListener('mousemove', (event) => {
-        const rect = heroTitle.getBoundingClientRect();
-        const xPercent = ((event.clientX - rect.left) / rect.width) * 100;
-        const yPercent = ((event.clientY - rect.top) / rect.height) * 100;
-        heroTitle.style.setProperty('--glow-x', `${xPercent}%`);
-        heroTitle.style.setProperty('--glow-y', `${yPercent}%`);
-      });
-
-      heroTitle.addEventListener('mouseleave', () => {
-        heroTitle.style.setProperty('--glow-x', '50%');
-        heroTitle.style.setProperty('--glow-y', '50%');
-      });
-    }
 
     hydrateLanguageOptionFlags();
     applyLanguage(localStorage.getItem(storageKey) || 'en');
